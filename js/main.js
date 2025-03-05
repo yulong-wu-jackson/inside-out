@@ -47,20 +47,60 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize animations using GSAP
 function initAnimations() {
   // Animate landing page elements
-  const landingTimeline = gsap.timeline();
-  landingTimeline
-    .from('.glass-container', { 
-      duration: 0.8, 
-      y: 50, 
-      opacity: 0, 
-      ease: 'power3.out' 
-    })
-    .from('.scroll-indicator', { 
-      duration: 0.4, 
-      y: 30, 
-      opacity: 0, 
-      ease: 'power2.out' 
-    }, '-=0.5');
+  let landingTimeline;
+  
+  // Function to run the landing page animations
+  function animateLandingElements() {
+    // Clear any existing animation to prevent conflicts
+    if (landingTimeline) {
+      landingTimeline.kill();
+    }
+    
+    // Make sure elements are visible after animation completes
+    gsap.set('.glass-container', { clearProps: "all" });
+    
+    // Create fresh animation timeline
+    landingTimeline = gsap.timeline();
+    landingTimeline
+      .from('.glass-container', { 
+        duration: 1.2, 
+        y: 50, 
+        opacity: 0, 
+        ease: 'power3.out',
+        onComplete: () => {
+          // Ensure visibility even if animation is interrupted
+          gsap.set('.glass-container', { opacity: 1, y: 0 });
+        }
+      })
+      .from('.scroll-indicator', { 
+        duration: 0.4, 
+        y: 30, 
+        opacity: 0, 
+        ease: 'power2.out',
+        onComplete: () => {
+          // Ensure visibility even if animation is interrupted
+          gsap.set('.scroll-indicator', { opacity: 1, y: 0 });
+        }
+      }, '-=0.5');
+  }
+  
+  // Run animations immediately on load
+  // slightly delayed to ensure elements are visible
+  setTimeout(() => {
+    animateLandingElements();
+  }, 3200);
+  
+  // Re-run animations when page becomes visible if it was hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      // Check if we're on the landing section
+      const landingSection = document.querySelector('#landing');
+      if (landingSection && isElementInViewport(landingSection)) {
+        console.log('Page became visible, replaying landing animations');
+        animateLandingElements();
+      }
+    }
+  });
   
   // Animate MBTI traits on scroll
   gsap.utils.toArray('.trait').forEach((trait, i) => {
