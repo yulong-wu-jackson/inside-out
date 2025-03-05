@@ -43,7 +43,10 @@ function initAnimations() {
   }
   
   // Run animations immediately on load
-  animateLandingElements();
+  // slightly delayed to ensure elements are visible
+  setTimeout(() => {
+    animateLandingElements();
+  }, 200);
   
   // Re-run animations when page becomes visible if it was hidden
   document.addEventListener('visibilitychange', () => {
