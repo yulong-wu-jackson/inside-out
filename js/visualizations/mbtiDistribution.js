@@ -6,11 +6,7 @@
  */
 async function loadMBTIData() {
   try {
-    const response = await fetch('../data/mbti_distribution.json');
-    // if we are in the github pages, the data is in different folder
-    if (window.location.href.includes('github.io')) {
-      const response = await fetch('https://yulong-wu-jackson.github.io/inside-out/data/mbti_distribution.json');
-    }
+    const response = await fetch('/data/mbti_distribution.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
