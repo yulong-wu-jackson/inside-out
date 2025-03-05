@@ -5,12 +5,19 @@
  * @returns {Promise} Promise that resolves to the MBTI data
  */
 async function loadMBTIData() {
+  // try {
+  //   const response = await fetch('/data/mbti_distribution.json');
+  //   if (!response.ok) {
+  //     throw new Error(`HTTP error! status: ${response.status}`);
+  //   }
+  //   const data = await response.json();
+  //   return data;
+  // } catch (error) {
+  //   console.error('Error loading MBTI data:', error);
+  //   return null;
+  // }
   try {
-    const response = await fetch('/data/mbti_distribution.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
+    const data = await d3.json('/data/mbti_distribution.json');
     return data;
   } catch (error) {
     console.error('Error loading MBTI data:', error);
