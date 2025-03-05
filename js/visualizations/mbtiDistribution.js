@@ -18,6 +18,10 @@ async function loadMBTIData() {
   // }
   try {
     const data = await d3.json('/data/mbti_distribution.json');
+    if (window.location.href.includes('github.io')) {
+      const data = await d3.json('inside-out/data/mbti_distribution.json');
+      return data;
+    }
     return data;
   } catch (error) {
     console.error('Error loading MBTI data:', error);
