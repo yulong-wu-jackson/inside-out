@@ -1,0 +1,20 @@
+{
+  "types": [
+    {"type": "ISTJ", "percentage": 11.6},
+    {"type": "ISFJ", "percentage": 13.8},
+    {"type": "INFJ", "percentage": 1.5},
+    {"type": "INTJ", "percentage": 2.1},
+    {"type": "ISTP", "percentage": 5.4},
+    {"type": "ISFP", "percentage": 8.8},
+    {"type": "INFP", "percentage": 4.4},
+    {"type": "INTP", "percentage": 3.3},
+    {"type": "ESTP", "percentage": 4.3},
+    {"type": "ESFP", "percentage": 8.5},
+    {"type": "ENFP", "percentage": 8.1},
+    {"type": "ENTP", "percentage": 3.2},
+    {"type": "ESTJ", "percentage": 8.7},
+    {"type": "ESFJ", "percentage": 12.3},
+    {"type": "ENFJ", "percentage": 2.5},
+    {"type": "ENTJ", "percentage": 1.8}
+  ]
+} 
