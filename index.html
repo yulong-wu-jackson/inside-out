@@ -244,17 +244,20 @@
         <div class="mbti-card">
           <h2><span class="highlight">Music Energy</span> by Type</h2>
           <p>Music can evoke different emotions and energies. Let's explore the energy levels of different music genres based on MBTI types.</p>
-
+    
           <div id="music-energy-analysis" class="visualization-container">
             <!-- D3 visualization will be rendered here -->
-            <div class="loading">
+            <div id="battery-visualization" class="visualization-container"></div>
+            <!-- <div class="loading">
               <div class="loading-spinner"></div>
               <div class="loading-text">Loading visualization...</div>
-            </div>
-          </div>
+            </div> -->
+          </div>      
+          
         </div>
       </div>
     </section>
+    
     
 
   </div>
@@ -279,6 +282,8 @@
   <!-- Visualizations -->
   <script src="js/visualizations/mbtiDistribution.js"></script>
   <script src="js/visualizations/index.js"></script>
+   <!-- Music Energy -->
+  <script src="js/visualizations/battery.js"></script>
   
   <!-- Main script -->
   <script src="js/main.js"></script>
