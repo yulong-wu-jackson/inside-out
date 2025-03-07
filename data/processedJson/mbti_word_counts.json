@@ -1,0 +1,1362 @@
+[
+  {
+    "mbti_type": "INFJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 6002
+      },
+      {
+        "word": "think",
+        "count": 4593
+      },
+      {
+        "word": "dont",
+        "count": 4413
+      },
+      {
+        "word": "people",
+        "count": 4175
+      },
+      {
+        "word": "know",
+        "count": 3396
+      },
+      {
+        "word": "one",
+        "count": 3116
+      },
+      {
+        "word": "really",
+        "count": 3052
+      },
+      {
+        "word": "would",
+        "count": 2984
+      },
+      {
+        "word": "infj",
+        "count": 2682
+      },
+      {
+        "word": "get",
+        "count": 2647
+      },
+      {
+        "word": "feel",
+        "count": 2438
+      },
+      {
+        "word": "time",
+        "count": 2377
+      },
+      {
+        "word": "ive",
+        "count": 2286
+      },
+      {
+        "word": "much",
+        "count": 2190
+      },
+      {
+        "word": "love",
+        "count": 2014
+      },
+      {
+        "word": "say",
+        "count": 1880
+      },
+      {
+        "word": "good",
+        "count": 1820
+      },
+      {
+        "word": "things",
+        "count": 1812
+      },
+      {
+        "word": "see",
+        "count": 1790
+      },
+      {
+        "word": "want",
+        "count": 1774
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENTP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 2911
+      },
+      {
+        "word": "think",
+        "count": 2214
+      },
+      {
+        "word": "dont",
+        "count": 2176
+      },
+      {
+        "word": "people",
+        "count": 1907
+      },
+      {
+        "word": "know",
+        "count": 1571
+      },
+      {
+        "word": "one",
+        "count": 1557
+      },
+      {
+        "word": "would",
+        "count": 1474
+      },
+      {
+        "word": "really",
+        "count": 1429
+      },
+      {
+        "word": "get",
+        "count": 1359
+      },
+      {
+        "word": "entp",
+        "count": 1271
+      },
+      {
+        "word": "time",
+        "count": 989
+      },
+      {
+        "word": "ive",
+        "count": 955
+      },
+      {
+        "word": "much",
+        "count": 903
+      },
+      {
+        "word": "see",
+        "count": 859
+      },
+      {
+        "word": "say",
+        "count": 857
+      },
+      {
+        "word": "good",
+        "count": 845
+      },
+      {
+        "word": "way",
+        "count": 838
+      },
+      {
+        "word": "youre",
+        "count": 786
+      },
+      {
+        "word": "things",
+        "count": 786
+      },
+      {
+        "word": "type",
+        "count": 776
+      }
+    ]
+  },
+  {
+    "mbti_type": "INTP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 5024
+      },
+      {
+        "word": "dont",
+        "count": 4287
+      },
+      {
+        "word": "think",
+        "count": 3822
+      },
+      {
+        "word": "people",
+        "count": 3547
+      },
+      {
+        "word": "would",
+        "count": 2956
+      },
+      {
+        "word": "know",
+        "count": 2630
+      },
+      {
+        "word": "one",
+        "count": 2583
+      },
+      {
+        "word": "really",
+        "count": 2465
+      },
+      {
+        "word": "get",
+        "count": 2210
+      },
+      {
+        "word": "intp",
+        "count": 2091
+      },
+      {
+        "word": "time",
+        "count": 1927
+      },
+      {
+        "word": "much",
+        "count": 1675
+      },
+      {
+        "word": "say",
+        "count": 1569
+      },
+      {
+        "word": "ive",
+        "count": 1556
+      },
+      {
+        "word": "something",
+        "count": 1523
+      },
+      {
+        "word": "way",
+        "count": 1522
+      },
+      {
+        "word": "things",
+        "count": 1495
+      },
+      {
+        "word": "also",
+        "count": 1451
+      },
+      {
+        "word": "want",
+        "count": 1433
+      },
+      {
+        "word": "see",
+        "count": 1411
+      }
+    ]
+  },
+  {
+    "mbti_type": "INTJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 4810
+      },
+      {
+        "word": "dont",
+        "count": 4031
+      },
+      {
+        "word": "people",
+        "count": 3474
+      },
+      {
+        "word": "think",
+        "count": 3460
+      },
+      {
+        "word": "would",
+        "count": 2917
+      },
+      {
+        "word": "one",
+        "count": 2683
+      },
+      {
+        "word": "know",
+        "count": 2585
+      },
+      {
+        "word": "intj",
+        "count": 2370
+      },
+      {
+        "word": "get",
+        "count": 2164
+      },
+      {
+        "word": "really",
+        "count": 2121
+      },
+      {
+        "word": "time",
+        "count": 2003
+      },
+      {
+        "word": "ive",
+        "count": 1599
+      },
+      {
+        "word": "say",
+        "count": 1532
+      },
+      {
+        "word": "something",
+        "count": 1482
+      },
+      {
+        "word": "much",
+        "count": 1472
+      },
+      {
+        "word": "good",
+        "count": 1421
+      },
+      {
+        "word": "way",
+        "count": 1412
+      },
+      {
+        "word": "things",
+        "count": 1358
+      },
+      {
+        "word": "want",
+        "count": 1354
+      },
+      {
+        "word": "see",
+        "count": 1349
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENTJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 722
+      },
+      {
+        "word": "dont",
+        "count": 590
+      },
+      {
+        "word": "think",
+        "count": 579
+      },
+      {
+        "word": "people",
+        "count": 517
+      },
+      {
+        "word": "would",
+        "count": 449
+      },
+      {
+        "word": "get",
+        "count": 405
+      },
+      {
+        "word": "one",
+        "count": 398
+      },
+      {
+        "word": "know",
+        "count": 370
+      },
+      {
+        "word": "entj",
+        "count": 366
+      },
+      {
+        "word": "really",
+        "count": 317
+      },
+      {
+        "word": "see",
+        "count": 277
+      },
+      {
+        "word": "time",
+        "count": 274
+      },
+      {
+        "word": "type",
+        "count": 268
+      },
+      {
+        "word": "good",
+        "count": 252
+      },
+      {
+        "word": "ive",
+        "count": 247
+      },
+      {
+        "word": "much",
+        "count": 237
+      },
+      {
+        "word": "say",
+        "count": 232
+      },
+      {
+        "word": "want",
+        "count": 223
+      },
+      {
+        "word": "make",
+        "count": 218
+      },
+      {
+        "word": "things",
+        "count": 213
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENFJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 800
+      },
+      {
+        "word": "think",
+        "count": 676
+      },
+      {
+        "word": "people",
+        "count": 594
+      },
+      {
+        "word": "dont",
+        "count": 537
+      },
+      {
+        "word": "really",
+        "count": 449
+      },
+      {
+        "word": "know",
+        "count": 444
+      },
+      {
+        "word": "would",
+        "count": 407
+      },
+      {
+        "word": "enfj",
+        "count": 372
+      },
+      {
+        "word": "get",
+        "count": 366
+      },
+      {
+        "word": "feel",
+        "count": 343
+      },
+      {
+        "word": "one",
+        "count": 341
+      },
+      {
+        "word": "ive",
+        "count": 302
+      },
+      {
+        "word": "time",
+        "count": 292
+      },
+      {
+        "word": "say",
+        "count": 280
+      },
+      {
+        "word": "love",
+        "count": 270
+      },
+      {
+        "word": "much",
+        "count": 265
+      },
+      {
+        "word": "something",
+        "count": 251
+      },
+      {
+        "word": "see",
+        "count": 246
+      },
+      {
+        "word": "way",
+        "count": 239
+      },
+      {
+        "word": "things",
+        "count": 235
+      }
+    ]
+  },
+  {
+    "mbti_type": "INFP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 6168
+      },
+      {
+        "word": "think",
+        "count": 4499
+      },
+      {
+        "word": "dont",
+        "count": 4386
+      },
+      {
+        "word": "people",
+        "count": 3829
+      },
+      {
+        "word": "really",
+        "count": 3353
+      },
+      {
+        "word": "know",
+        "count": 3105
+      },
+      {
+        "word": "one",
+        "count": 2859
+      },
+      {
+        "word": "would",
+        "count": 2769
+      },
+      {
+        "word": "get",
+        "count": 2479
+      },
+      {
+        "word": "feel",
+        "count": 2477
+      },
+      {
+        "word": "infp",
+        "count": 2395
+      },
+      {
+        "word": "ive",
+        "count": 2292
+      },
+      {
+        "word": "time",
+        "count": 2150
+      },
+      {
+        "word": "love",
+        "count": 2043
+      },
+      {
+        "word": "much",
+        "count": 1995
+      },
+      {
+        "word": "want",
+        "count": 1749
+      },
+      {
+        "word": "things",
+        "count": 1710
+      },
+      {
+        "word": "good",
+        "count": 1698
+      },
+      {
+        "word": "say",
+        "count": 1633
+      },
+      {
+        "word": "way",
+        "count": 1608
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENFP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 2235
+      },
+      {
+        "word": "think",
+        "count": 1554
+      },
+      {
+        "word": "dont",
+        "count": 1459
+      },
+      {
+        "word": "people",
+        "count": 1294
+      },
+      {
+        "word": "really",
+        "count": 1172
+      },
+      {
+        "word": "know",
+        "count": 1148
+      },
+      {
+        "word": "enfp",
+        "count": 1057
+      },
+      {
+        "word": "one",
+        "count": 1011
+      },
+      {
+        "word": "would",
+        "count": 1009
+      },
+      {
+        "word": "get",
+        "count": 944
+      },
+      {
+        "word": "love",
+        "count": 837
+      },
+      {
+        "word": "time",
+        "count": 774
+      },
+      {
+        "word": "ive",
+        "count": 758
+      },
+      {
+        "word": "feel",
+        "count": 743
+      },
+      {
+        "word": "much",
+        "count": 732
+      },
+      {
+        "word": "things",
+        "count": 628
+      },
+      {
+        "word": "good",
+        "count": 605
+      },
+      {
+        "word": "say",
+        "count": 601
+      },
+      {
+        "word": "want",
+        "count": 590
+      },
+      {
+        "word": "way",
+        "count": 569
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISFP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 1165
+      },
+      {
+        "word": "dont",
+        "count": 760
+      },
+      {
+        "word": "think",
+        "count": 716
+      },
+      {
+        "word": "really",
+        "count": 610
+      },
+      {
+        "word": "people",
+        "count": 573
+      },
+      {
+        "word": "know",
+        "count": 493
+      },
+      {
+        "word": "get",
+        "count": 480
+      },
+      {
+        "word": "isfp",
+        "count": 463
+      },
+      {
+        "word": "one",
+        "count": 457
+      },
+      {
+        "word": "would",
+        "count": 403
+      },
+      {
+        "word": "feel",
+        "count": 382
+      },
+      {
+        "word": "time",
+        "count": 372
+      },
+      {
+        "word": "ive",
+        "count": 369
+      },
+      {
+        "word": "love",
+        "count": 350
+      },
+      {
+        "word": "good",
+        "count": 320
+      },
+      {
+        "word": "things",
+        "count": 312
+      },
+      {
+        "word": "say",
+        "count": 308
+      },
+      {
+        "word": "much",
+        "count": 306
+      },
+      {
+        "word": "type",
+        "count": 290
+      },
+      {
+        "word": "something",
+        "count": 265
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISTP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 1558
+      },
+      {
+        "word": "dont",
+        "count": 1394
+      },
+      {
+        "word": "think",
+        "count": 999
+      },
+      {
+        "word": "people",
+        "count": 985
+      },
+      {
+        "word": "know",
+        "count": 846
+      },
+      {
+        "word": "get",
+        "count": 829
+      },
+      {
+        "word": "would",
+        "count": 792
+      },
+      {
+        "word": "really",
+        "count": 751
+      },
+      {
+        "word": "one",
+        "count": 748
+      },
+      {
+        "word": "time",
+        "count": 643
+      },
+      {
+        "word": "istp",
+        "count": 580
+      },
+      {
+        "word": "ive",
+        "count": 576
+      },
+      {
+        "word": "much",
+        "count": 553
+      },
+      {
+        "word": "something",
+        "count": 549
+      },
+      {
+        "word": "want",
+        "count": 496
+      },
+      {
+        "word": "things",
+        "count": 456
+      },
+      {
+        "word": "good",
+        "count": 455
+      },
+      {
+        "word": "way",
+        "count": 450
+      },
+      {
+        "word": "say",
+        "count": 448
+      },
+      {
+        "word": "see",
+        "count": 428
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISFJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 617
+      },
+      {
+        "word": "think",
+        "count": 483
+      },
+      {
+        "word": "dont",
+        "count": 457
+      },
+      {
+        "word": "people",
+        "count": 367
+      },
+      {
+        "word": "really",
+        "count": 334
+      },
+      {
+        "word": "know",
+        "count": 317
+      },
+      {
+        "word": "isfj",
+        "count": 296
+      },
+      {
+        "word": "would",
+        "count": 282
+      },
+      {
+        "word": "one",
+        "count": 264
+      },
+      {
+        "word": "get",
+        "count": 245
+      },
+      {
+        "word": "things",
+        "count": 239
+      },
+      {
+        "word": "time",
+        "count": 238
+      },
+      {
+        "word": "feel",
+        "count": 230
+      },
+      {
+        "word": "much",
+        "count": 222
+      },
+      {
+        "word": "ive",
+        "count": 221
+      },
+      {
+        "word": "love",
+        "count": 218
+      },
+      {
+        "word": "say",
+        "count": 202
+      },
+      {
+        "word": "see",
+        "count": 193
+      },
+      {
+        "word": "also",
+        "count": 181
+      },
+      {
+        "word": "lot",
+        "count": 181
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISTJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 1081
+      },
+      {
+        "word": "dont",
+        "count": 850
+      },
+      {
+        "word": "think",
+        "count": 624
+      },
+      {
+        "word": "people",
+        "count": 598
+      },
+      {
+        "word": "know",
+        "count": 532
+      },
+      {
+        "word": "one",
+        "count": 530
+      },
+      {
+        "word": "would",
+        "count": 509
+      },
+      {
+        "word": "get",
+        "count": 469
+      },
+      {
+        "word": "really",
+        "count": 444
+      },
+      {
+        "word": "istj",
+        "count": 439
+      },
+      {
+        "word": "time",
+        "count": 414
+      },
+      {
+        "word": "ive",
+        "count": 364
+      },
+      {
+        "word": "things",
+        "count": 327
+      },
+      {
+        "word": "say",
+        "count": 326
+      },
+      {
+        "word": "much",
+        "count": 321
+      },
+      {
+        "word": "something",
+        "count": 315
+      },
+      {
+        "word": "good",
+        "count": 298
+      },
+      {
+        "word": "feel",
+        "count": 286
+      },
+      {
+        "word": "see",
+        "count": 286
+      },
+      {
+        "word": "even",
+        "count": 277
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESTP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 412
+      },
+      {
+        "word": "dont",
+        "count": 327
+      },
+      {
+        "word": "get",
+        "count": 282
+      },
+      {
+        "word": "think",
+        "count": 278
+      },
+      {
+        "word": "people",
+        "count": 267
+      },
+      {
+        "word": "know",
+        "count": 247
+      },
+      {
+        "word": "really",
+        "count": 233
+      },
+      {
+        "word": "estp",
+        "count": 221
+      },
+      {
+        "word": "one",
+        "count": 201
+      },
+      {
+        "word": "would",
+        "count": 199
+      },
+      {
+        "word": "ive",
+        "count": 160
+      },
+      {
+        "word": "type",
+        "count": 153
+      },
+      {
+        "word": "see",
+        "count": 135
+      },
+      {
+        "word": "good",
+        "count": 133
+      },
+      {
+        "word": "time",
+        "count": 131
+      },
+      {
+        "word": "want",
+        "count": 123
+      },
+      {
+        "word": "things",
+        "count": 118
+      },
+      {
+        "word": "something",
+        "count": 113
+      },
+      {
+        "word": "much",
+        "count": 112
+      },
+      {
+        "word": "way",
+        "count": 111
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESFP",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 150
+      },
+      {
+        "word": "dont",
+        "count": 118
+      },
+      {
+        "word": "think",
+        "count": 106
+      },
+      {
+        "word": "people",
+        "count": 98
+      },
+      {
+        "word": "would",
+        "count": 85
+      },
+      {
+        "word": "know",
+        "count": 83
+      },
+      {
+        "word": "esfp",
+        "count": 82
+      },
+      {
+        "word": "one",
+        "count": 73
+      },
+      {
+        "word": "really",
+        "count": 72
+      },
+      {
+        "word": "get",
+        "count": 60
+      },
+      {
+        "word": "say",
+        "count": 50
+      },
+      {
+        "word": "want",
+        "count": 49
+      },
+      {
+        "word": "feel",
+        "count": 46
+      },
+      {
+        "word": "ive",
+        "count": 45
+      },
+      {
+        "word": "type",
+        "count": 43
+      },
+      {
+        "word": "see",
+        "count": 43
+      },
+      {
+        "word": "good",
+        "count": 38
+      },
+      {
+        "word": "time",
+        "count": 37
+      },
+      {
+        "word": "love",
+        "count": 37
+      },
+      {
+        "word": "youre",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESTJ",
+    "word_counts": [
+      {
+        "word": "dont",
+        "count": 88
+      },
+      {
+        "word": "like",
+        "count": 75
+      },
+      {
+        "word": "would",
+        "count": 72
+      },
+      {
+        "word": "know",
+        "count": 67
+      },
+      {
+        "word": "think",
+        "count": 67
+      },
+      {
+        "word": "estj",
+        "count": 54
+      },
+      {
+        "word": "people",
+        "count": 52
+      },
+      {
+        "word": "one",
+        "count": 50
+      },
+      {
+        "word": "say",
+        "count": 43
+      },
+      {
+        "word": "type",
+        "count": 42
+      },
+      {
+        "word": "really",
+        "count": 40
+      },
+      {
+        "word": "want",
+        "count": 37
+      },
+      {
+        "word": "get",
+        "count": 36
+      },
+      {
+        "word": "need",
+        "count": 33
+      },
+      {
+        "word": "never",
+        "count": 32
+      },
+      {
+        "word": "well",
+        "count": 31
+      },
+      {
+        "word": "see",
+        "count": 31
+      },
+      {
+        "word": "even",
+        "count": 31
+      },
+      {
+        "word": "time",
+        "count": 30
+      },
+      {
+        "word": "love",
+        "count": 29
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESFJ",
+    "word_counts": [
+      {
+        "word": "like",
+        "count": 220
+      },
+      {
+        "word": "think",
+        "count": 218
+      },
+      {
+        "word": "people",
+        "count": 166
+      },
+      {
+        "word": "dont",
+        "count": 157
+      },
+      {
+        "word": "esfj",
+        "count": 143
+      },
+      {
+        "word": "know",
+        "count": 125
+      },
+      {
+        "word": "really",
+        "count": 123
+      },
+      {
+        "word": "would",
+        "count": 117
+      },
+      {
+        "word": "get",
+        "count": 109
+      },
+      {
+        "word": "one",
+        "count": 105
+      },
+      {
+        "word": "esfjs",
+        "count": 102
+      },
+      {
+        "word": "lot",
+        "count": 97
+      },
+      {
+        "word": "time",
+        "count": 94
+      },
+      {
+        "word": "love",
+        "count": 87
+      },
+      {
+        "word": "ive",
+        "count": 86
+      },
+      {
+        "word": "type",
+        "count": 85
+      },
+      {
+        "word": "feel",
+        "count": 81
+      },
+      {
+        "word": "much",
+        "count": 78
+      },
+      {
+        "word": "things",
+        "count": 73
+      },
+      {
+        "word": "way",
+        "count": 70
+      }
+    ]
+  }
+]

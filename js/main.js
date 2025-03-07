@@ -6,6 +6,9 @@ let userSkippedMBTI = false;
 let previousMBTIType = null; // Track previous selection for comparison
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize the Who Comments Most visualization
+
+  
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
   
@@ -14,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initNavigation();
   initMBTISelection();
+
+
   
   // Initialize visualizations after exposing functions 
   // to make them available globally
@@ -23,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     console.log('Initializing all visualizations from main.js...');
     initAllVisualizations();
+    initWhoCommentsMostChart();
   }, 500);
   
   // Add window resize handler for responsive visualizations
