@@ -292,10 +292,12 @@ function initMBTISelection() {
   
   // Track previous MBTI type to detect changes
   let previousMBTIType = localStorage.getItem('userMBTIType') || '';
+  console.log('DEBUG - Current MBTI type in localStorage:', localStorage.getItem('userMBTIType'));
   
   // Initialize letters from localStorage if available
   const savedType = localStorage.getItem('userMBTIType');
   if (savedType && savedType !== 'unknown' && savedType.length === 4) {
+    console.log('DEBUG - Initializing MBTI selection with saved type:', savedType);
     for (let i = 0; i < 4; i++) {
       mbtiLetters[i].textContent = savedType[i];
       mbtiIndicators[i].textContent = savedType[i];
@@ -309,6 +311,7 @@ function initMBTISelection() {
     }
     confirmButton.disabled = false;
   } else {
+    console.log('DEBUG - No valid MBTI type saved, resetting UI');
     // Ensure letters are empty if no saved type
     mbtiLetters.forEach(letter => {
       letter.textContent = '';
@@ -327,6 +330,7 @@ function initMBTISelection() {
     button.addEventListener('click', () => {
       const position = parseInt(button.dataset.position);
       const letter = button.dataset.letter;
+      console.log(`DEBUG - Selected letter ${letter} at position ${position}`);
       
       // Deselect other buttons in the same group
       mbtiButtons.forEach(b => {
@@ -358,12 +362,14 @@ function initMBTISelection() {
   confirmButton.addEventListener('click', () => {
     // Get the selected MBTI type
     const mbtiType = Array.from(mbtiLetters).map(letter => letter.textContent).join('');
+    console.log('DEBUG - Confirming MBTI type:', mbtiType);
     
     // Store previous type before updating
     previousMBTIType = localStorage.getItem('userMBTIType') || '';
     
     // Save to localStorage
     localStorage.setItem('userMBTIType', mbtiType);
+    console.log('DEBUG - Saved to localStorage. Previous:', previousMBTIType, 'New:', mbtiType);
     
     // Show success message with animation
     resultMessage.textContent = `Your MBTI type (${mbtiType}) has been saved!`;
@@ -371,9 +377,11 @@ function initMBTISelection() {
     
     // Refresh visualization if the type has changed
     if (previousMBTIType !== mbtiType) {
+      console.log('DEBUG - MBTI type changed, refreshing visualization');
       refreshVisualization();
     } else {
       // Even if the type hasn't changed, ensure it's highlighted
+      console.log('DEBUG - MBTI type unchanged, just highlighting');
       highlightUserTypeInChart();
     }
   });
@@ -385,6 +393,7 @@ function initMBTISelection() {
     
     // Set as unknown
     localStorage.setItem('userMBTIType', 'unknown');
+    console.log('DEBUG - Set MBTI type to "unknown"');
     
     // Reset the letter display
     mbtiLetters.forEach(letter => {
@@ -410,6 +419,7 @@ function initMBTISelection() {
     
     // Refresh visualization if the type has changed
     if (previousMBTIType !== 'unknown') {
+      console.log('DEBUG - MBTI type changed to unknown, refreshing visualization');
       refreshVisualization();
     }
   });
@@ -442,107 +452,100 @@ function refreshVisualization() {
       
       // Reinitialize the visualization
       console.log("Loading MBTI data and creating chart...");
-      const mbtiData = await loadMBTIData();
-      if (mbtiData) {
-        createTypeDistributionChart(mbtiData);
-        
-        // Add a small delay before highlighting to ensure the chart is fully rendered
-        // This is essential for the highlight to find the correct bars
-        setTimeout(() => {
-          console.log("Chart created, now highlighting user type...");
-          highlightUserTypeInChart();
-        }, 1800); // Increased delay to ensure chart is fully rendered
-      }
-    }, 2000);
+      initAllVisualizations();
+      
+      // Note: No need to call highlightUserTypeInChart separately as 
+      // it's already called inside initMBTIDistributionViz with the proper delay
+    }, 500);
   }
 }
 
 // Function to highlight user's MBTI type in the chart
-function highlightUserTypeInChart() {
-  console.log("Attempting to highlight user MBTI type");
+// function highlightUserTypeInChart() {
+//   console.log("Attempting to highlight user MBTI type");
   
-  // Get the user's MBTI type from localStorage
-  const userMBTIType = localStorage.getItem('userMBTIType');
-  if (!userMBTIType || userMBTIType === "unknown") {
-    console.log("No user MBTI type found in localStorage or type is unknown");
-    return;
-  }
+//   // Get the user's MBTI type from localStorage
+//   const userMBTIType = localStorage.getItem('userMBTIType');
+//   if (!userMBTIType || userMBTIType === "unknown") {
+//     console.log("No user MBTI type found in localStorage or type is unknown");
+//     return;
+//   }
   
-  console.log(`Highlighting user MBTI type: ${userMBTIType}`);
+//   console.log(`Highlighting user MBTI type: ${userMBTIType}`);
   
-  // Check if the SVG container exists - use the correct selector from mbti_data.js
-  const svgContainer = d3.select("#type-distribution-chart svg");
-  if (svgContainer.empty()) {
-    console.log("SVG container not found, retrying in 1200ms");
-    setTimeout(highlightUserTypeInChart, 1800);
-    return;
-  }
+//   // Check if the SVG container exists - use the correct selector from mbti_data.js
+//   const svgContainer = d3.select("#type-distribution-chart svg");
+//   if (svgContainer.empty()) {
+//     console.log("SVG container not found, retrying in 1200ms");
+//     setTimeout(highlightUserTypeInChart, 1800);
+//     return;
+//   }
   
-  // Remove existing highlights first
-  d3.selectAll(".highlight-overlay").remove();
-  d3.selectAll(".user-position-label").remove();
+//   // Remove existing highlights first
+//   d3.selectAll(".highlight-overlay").remove();
+//   d3.selectAll(".user-position-label").remove();
   
-  // Find the bar corresponding to the user's MBTI type
-  let foundMatch = false;
-  d3.selectAll(".bar")
-    .each(function(d) {
-      if (d && d.type === userMBTIType) {
-        foundMatch = true;
-        console.log(`Found matching bar for ${userMBTIType}`);
+//   // Find the bar corresponding to the user's MBTI type
+//   let foundMatch = false;
+//   d3.selectAll(".bar")
+//     .each(function(d) {
+//       if (d && d.type === userMBTIType) {
+//         foundMatch = true;
+//         console.log(`Found matching bar for ${userMBTIType}`);
         
-        // Get the bar and its positioning attributes directly from D3 data
-        const bar = d3.select(this);
-        const barX = parseFloat(bar.attr('x'));
-        const barY = parseFloat(bar.attr('y'));
-        const barWidth = parseFloat(bar.attr('width'));
-        const barHeight = parseFloat(bar.attr('height'));
+//         // Get the bar and its positioning attributes directly from D3 data
+//         const bar = d3.select(this);
+//         const barX = parseFloat(bar.attr('x'));
+//         const barY = parseFloat(bar.attr('y'));
+//         const barWidth = parseFloat(bar.attr('width'));
+//         const barHeight = parseFloat(bar.attr('height'));
         
-        // Get the SVG's g element (the main chart group)
-        const svg = d3.select('#type-distribution-chart svg g');
+//         // Get the SVG's g element (the main chart group)
+//         const svg = d3.select('#type-distribution-chart svg g');
         
-        // Add dotted rectangle around the bar with animation
-        svg.append("rect")
-          .attr("class", "highlight-overlay")
-          .attr("x", barX - 2)
-          .attr("y", barY - 2)
-          .attr("width", barWidth + 4)
-          .attr("height", barHeight + 4)
-          .attr("fill", "none")
-          .attr("stroke", "#FF5722")
-          .attr("stroke-width", 2)
-          .attr("stroke-dasharray", "5,5")
-          .attr("pointer-events", "none")
-          .style("opacity", 0) // Start invisible
-          .transition() // Add transition
-          .duration(600) // 600ms fade in
-          .delay(200) // Small delay before starting
-          .style("opacity", 1); // Fade to fully visible
+//         // Add dotted rectangle around the bar with animation
+//         svg.append("rect")
+//           .attr("class", "highlight-overlay")
+//           .attr("x", barX - 2)
+//           .attr("y", barY - 2)
+//           .attr("width", barWidth + 4)
+//           .attr("height", barHeight + 4)
+//           .attr("fill", "none")
+//           .attr("stroke", "#FF5722")
+//           .attr("stroke-width", 2)
+//           .attr("stroke-dasharray", "5,5")
+//           .attr("pointer-events", "none")
+//           .style("opacity", 0) // Start invisible
+//           .transition() // Add transition
+//           .duration(600) // 600ms fade in
+//           .delay(200) // Small delay before starting
+//           .style("opacity", 1); // Fade to fully visible
         
-        // Add "You are here" text above the bar with animation
-        svg.append("text")
-          .attr("class", "user-position-label")
-          .attr("x", barX + barWidth / 2)
-          .attr("y", barY - 30)
-          .attr("text-anchor", "middle")
-          .attr("fill", "#FF5722")
-          .attr("font-weight", "bold")
-          .attr("font-size", "12px")
-          .attr("font-family", "'Poppins', sans-serif")
-          .text("You are here")
-          .attr("pointer-events", "none")
-          .style("opacity", 0) // Start invisible
-          .transition() // Add transition
-          .duration(600) // 600ms fade in
-          .delay(400) // Slightly longer delay than rectangle for staggered effect
-          .style("opacity", 1); // Fade to fully visible
-      }
-    });
+//         // Add "You are here" text above the bar with animation
+//         svg.append("text")
+//           .attr("class", "user-position-label")
+//           .attr("x", barX + barWidth / 2)
+//           .attr("y", barY - 30)
+//           .attr("text-anchor", "middle")
+//           .attr("fill", "#FF5722")
+//           .attr("font-weight", "bold")
+//           .attr("font-size", "12px")
+//           .attr("font-family", "'Poppins', sans-serif")
+//           .text("You are here")
+//           .attr("pointer-events", "none")
+//           .style("opacity", 0) // Start invisible
+//           .transition() // Add transition
+//           .duration(600) // 600ms fade in
+//           .delay(400) // Slightly longer delay than rectangle for staggered effect
+//           .style("opacity", 1); // Fade to fully visible
+//       }
+//     });
   
-  if (!foundMatch && userMBTIType !== "unknown") {
-    console.log(`No matching bar found for ${userMBTIType}, retrying in 1200ms`);
-    setTimeout(highlightUserTypeInChart, 1800);
-  }
-}
+//   if (!foundMatch && userMBTIType !== "unknown") {
+//     console.log(`No matching bar found for ${userMBTIType}, retrying in 1200ms`);
+//     setTimeout(highlightUserTypeInChart, 1800);
+//   }
+// }
 
 /**
  * Call this to initialize all MBTI visualizations

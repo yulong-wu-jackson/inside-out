@@ -1,26 +1,49 @@
 // mbtiDistribution.js - Visualization for MBTI type distribution
 
 /**
- * Load MBTI distribution data from JSON file
- * @returns {Promise} Promise that resolves to the MBTI data
+ * Load MBTI type distribution data
+ * @returns {Promise<Object>} Object containing MBTI type data
  */
 async function loadMBTIData() {
-  // try {
-  //   const response = await fetch('/data/mbti_distribution.json');
-  //   if (!response.ok) {
-  //     throw new Error(`HTTP error! status: ${response.status}`);
-  //   }
-  //   const data = await response.json();
-  //   return data;
-  // } catch (error) {
-  //   console.error('Error loading MBTI data:', error);
-  //   return null;
-  // }
   try {
-    const data = await d3.json('/data/mbti_distribution.json');
-    return data;
+    console.log('Loading MBTI data...');
+    
+    // Try to load data from the server
+    try {
+      const response = await fetch('./data/mbti_distribution.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('Successfully loaded MBTI data from server:', data);
+      return data;
+    } catch (error) {
+      console.warn('Error loading from server, using fallback data:', error);
+      
+      // Use fallback data if server data can't be loaded
+      return {
+        types: [
+          { type: "ISTJ", percentage: 11.6, category: "Sentinels" },
+          { type: "ISFJ", percentage: 13.8, category: "Sentinels" },
+          { type: "INFJ", percentage: 1.5, category: "Diplomats" },
+          { type: "INTJ", percentage: 2.1, category: "Analysts" },
+          { type: "ISTP", percentage: 5.4, category: "Explorers" },
+          { type: "ISFP", percentage: 8.8, category: "Explorers" },
+          { type: "INFP", percentage: 4.4, category: "Diplomats" },
+          { type: "INTP", percentage: 3.3, category: "Analysts" },
+          { type: "ESTP", percentage: 4.3, category: "Explorers" },
+          { type: "ESFP", percentage: 8.5, category: "Explorers" },
+          { type: "ENFP", percentage: 8.1, category: "Diplomats" },
+          { type: "ENTP", percentage: 3.2, category: "Analysts" },
+          { type: "ESTJ", percentage: 8.7, category: "Sentinels" },
+          { type: "ESFJ", percentage: 12.3, category: "Sentinels" },
+          { type: "ENFJ", percentage: 2.5, category: "Diplomats" },
+          { type: "ENTJ", percentage: 1.8, category: "Analysts" }
+        ]
+      };
+    }
   } catch (error) {
-    console.error('Error loading MBTI data:', error);
+    console.error('Error in loadMBTIData:', error);
     return null;
   }
 }
@@ -34,6 +57,8 @@ function createTypeDistributionChart(data) {
     console.error('Invalid data format for MBTI distribution');
     return;
   }
+
+  console.log('DEBUG - Creating chart with data:', data);
 
   // Clear any existing content
   const container = d3.select('#type-distribution-chart');
@@ -118,6 +143,8 @@ function createTypeDistributionChart(data) {
     // Then sort by percentage within category (descending)
     return b.percentage - a.percentage;
   });
+  
+  console.log('DEBUG - Sorted data for chart:', sortedData);
   
   // X and Y scales
   const x = d3.scaleBand()
@@ -209,8 +236,8 @@ function createTypeDistributionChart(data) {
   const barsGroup = svg.append('g')
     .attr('clip-path', 'url(#chart-area)');
   
-  // Create bars with gradient fill
-  barsGroup.selectAll('.bar')
+  // Create bars with gradient fill and proper data binding
+  const bars = barsGroup.selectAll('.bar')
     .data(sortedData)
     .enter()
     .append('rect')
@@ -220,42 +247,48 @@ function createTypeDistributionChart(data) {
     .attr('y', height) // Start at the bottom for animation
     .attr('height', 0) // Start with height 0 for animation
     .attr('rx', 4) // Rounded corners
-    .attr('ry', 4)
-    .style('fill', d => {
-      // Create unique gradient ID for each bar
-      const gradientId = `gradient-${d.type}`;
-      
-      // Define gradient
-      const gradient = svg.append('defs')
-        .append('linearGradient')
-        .attr('id', gradientId)
-        .attr('x1', '0%')
-        .attr('y1', '0%')
-        .attr('x2', '0%')
-        .attr('y2', '100%');
-      
-      // Get base color from category
-      const baseColor = categoryColors[d.category];
-      console.log(`MBTI Type: ${d.type}, Category: ${d.category}, Color: ${baseColor}`);
-      
-      // Add gradient stops
-      gradient.append('stop')
-        .attr('offset', '0%')
-        .attr('stop-color', baseColor)
-        .attr('stop-opacity', 0.9);
-      
-      gradient.append('stop')
-        .attr('offset', '100%')
-        .attr('stop-color', baseColor)
-        .attr('stop-opacity', 0.7);
-      
-      return `url(#${gradientId})`;
-    })
-    .style('filter', 'drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.1))');
+    .attr('ry', 4);
+    
+  // Log data binding for debugging
+  bars.each(function(d) {
+    console.log(`DEBUG - Bar created for ${d.type}, category: ${d.category}, percentage: ${d.percentage}`);
+  });
+    
+  // Apply fill style after data binding is confirmed
+  bars.style('fill', d => {
+    // Create unique gradient ID for each bar
+    const gradientId = `gradient-${d.type}`;
+    
+    // Define gradient
+    const gradient = svg.append('defs')
+      .append('linearGradient')
+      .attr('id', gradientId)
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '0%')
+      .attr('y2', '100%');
+    
+    // Get base color from category
+    const baseColor = categoryColors[d.category];
+    console.log(`MBTI Type: ${d.type}, Category: ${d.category}, Color: ${baseColor}`);
+    
+    // Add gradient stops
+    gradient.append('stop')
+      .attr('offset', '0%')
+      .attr('stop-color', baseColor)
+      .attr('stop-opacity', 0.9);
+    
+    gradient.append('stop')
+      .attr('offset', '100%')
+      .attr('stop-color', baseColor)
+      .attr('stop-opacity', 0.7);
+    
+    return `url(#${gradientId})`;
+  })
+  .style('filter', 'drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.1))');
   
   // Add animation
-  barsGroup.selectAll('.bar')
-    .transition()
+  bars.transition()
     .duration(500)
     .delay((d, i) => i * 50)
     .attr('y', d => y(d.percentage))
@@ -288,8 +321,8 @@ function createTypeDistributionChart(data) {
   
   // Add title with responsive positioning
   const titleYPosition = containerWidth < 500 ? -margin.top + 20 : 
-                         containerWidth < 768 ? -margin.top + 25 : 
-                         -margin.top + 30;
+                       containerWidth < 768 ? -margin.top + 25 : 
+                       -margin.top + 30;
   
   svg.append('text')
     .attr('x', width / 2)
@@ -359,90 +392,97 @@ function createTypeDistributionChart(data) {
 }
 
 /**
- * Highlight user's MBTI type in the chart with animated effects
+ * Highlight the user's MBTI type in the chart with a simple dotted line
  */
 function highlightUserTypeInChart() {
-  console.log("Attempting to highlight user MBTI type");
-  
-  // Get the user's MBTI type from localStorage
-  const userMBTIType = localStorage.getItem('userMBTIType');
-  if (!userMBTIType || userMBTIType === "unknown") {
-    console.log("No user MBTI type found in localStorage or type is unknown");
-    return;
-  }
-  
-  console.log(`Highlighting user MBTI type: ${userMBTIType}`);
-  
-  // Check if the SVG container exists - use the correct selector from mbti_data.js
-  const svgContainer = d3.select("#type-distribution-chart svg");
-  if (svgContainer.empty()) {
-    console.log("SVG container not found, retrying in 1000ms");
+  const svg = d3.select('#type-distribution-chart svg');
+  if (!svg.node()) {
+    console.log('SVG container not found for highlighting, retrying in 1000ms...');
     setTimeout(highlightUserTypeInChart, 1000);
     return;
   }
   
-  // Remove existing highlights first
-  d3.selectAll(".highlight-overlay").remove();
-  d3.selectAll(".user-position-label").remove();
+  const userType = localStorage.getItem('userMBTIType');
+  if (!userType || userType === 'unknown') {
+    console.log('No user MBTI type to highlight');
+    return;
+  }
   
-  // Find the bar corresponding to the user's MBTI type
+  console.log('Highlighting user MBTI type:', userType);
+  
+  // First, remove ALL previous highlights
+  d3.selectAll('.user-type-highlight').remove();
+  d3.selectAll('.user-type-label').remove();
+  
+  // Find the bar for the user's type
   let foundMatch = false;
-  d3.selectAll(".bar")
-    .each(function(d) {
-      if (d && d.type === userMBTIType) {
-        foundMatch = true;
-        console.log(`Found matching bar for ${userMBTIType}`);
-        
-        // Get the bar and its positioning attributes directly from D3 data
-        const bar = d3.select(this);
-        const barX = parseFloat(bar.attr('x'));
-        const barY = parseFloat(bar.attr('y'));
-        const barWidth = parseFloat(bar.attr('width'));
-        const barHeight = parseFloat(bar.attr('height'));
-        
-        // Get the SVG's g element (the main chart group)
-        const svg = d3.select('#type-distribution-chart svg g');
-        
-        // Add dotted rectangle around the bar with animation
-        svg.append("rect")
-          .attr("class", "highlight-overlay")
-          .attr("x", barX - 2)
-          .attr("y", barY - 2)
-          .attr("width", barWidth + 4)
-          .attr("height", barHeight + 4)
-          .attr("fill", "none")
-          .attr("stroke", "#FF5722")
-          .attr("stroke-width", 2)
-          .attr("stroke-dasharray", "5,5")
-          .attr("pointer-events", "none")
-          .style("opacity", 0) // Start invisible
-          .transition() // Add transition
-          .duration(600) // 600ms fade in
-          .delay(200) // Small delay before starting
-          .style("opacity", 1); // Fade to fully visible
-        
-        // Add "You are here" text above the bar with animation
-        svg.append("text")
-          .attr("class", "user-position-label")
-          .attr("x", barX + barWidth / 2)
-          .attr("y", barY - 10)
-          .attr("text-anchor", "middle")
-          .attr("fill", "#FF5722")
-          .attr("font-weight", "bold")
-          .attr("font-size", "12px")
-          .attr("font-family", "'Poppins', sans-serif")
-          .text("You are here")
-          .attr("pointer-events", "none")
-          .style("opacity", 0) // Start invisible
-          .transition() // Add transition
-          .duration(400) // 600ms fade in
-          .delay(400) // Slightly longer delay than rectangle for staggered effect
-          .style("opacity", 1); // Fade to fully visible
-      }
-    });
+  let debugBars = [];
   
-  if (!foundMatch && userMBTIType !== "unknown") {
-    console.log(`No matching bar found for ${userMBTIType}, retrying in 1000ms`);
+  // Log all bar data to debug
+  console.log('--- DEBUG: All bars data ---');
+  svg.selectAll('.bar').each(function() {
+    const bar = d3.select(this);
+    const barData = bar.datum();
+    debugBars.push({
+      type: barData ? barData.type : 'undefined',
+      data: barData
+    });
+  });
+  console.log('Available bars:', debugBars);
+  
+  // Get the SVG's g element (the main chart group)
+  const g = svg.select('g');
+  if (!g.node()) {
+    console.log('SVG g element not found, retrying in 1000ms...');
+    setTimeout(highlightUserTypeInChart, 1000);
+    return;
+  }
+  
+  // Find bar with matching type
+  g.selectAll('.bar').each(function() {
+    const bar = d3.select(this);
+    const barData = bar.datum();
+    
+    console.log('Checking bar:', barData ? barData.type : 'undefined', 'against userType:', userType);
+    
+    if (barData && barData.type === userType) {
+      foundMatch = true;
+      console.log('Found matching bar for user type:', userType);
+      
+      // Get bar dimensions and position
+      const barRect = this.getBBox();
+      const offsetX = parseFloat(bar.attr('x')) || 0;
+      const offsetY = parseFloat(bar.attr('y')) || 0;
+      
+      // Create highlight rectangle (dotted outline)
+      g.append('rect')
+        .attr('class', 'user-type-highlight')
+        .attr('x', offsetX - 3)
+        .attr('y', offsetY - 3)
+        .attr('width', barRect.width + 6)
+        .attr('height', barRect.height + 6)
+        .attr('fill', 'none')
+        .attr('stroke', '#FF5733')
+        .attr('stroke-width', 2)
+        .attr('stroke-dasharray', '5,3')
+        .attr('rx', 3)
+        .attr('ry', 3);
+      
+      // Add "You are here" label
+      g.append('text')
+        .attr('class', 'user-type-label')
+        .attr('x', offsetX + barRect.width/2)
+        .attr('y', offsetY - 10)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '12px')
+        .attr('font-weight', 'bold')
+        .attr('fill', '#FF5733')
+        .text('You are here');
+    }
+  });
+  
+  if (!foundMatch) {
+    console.log('No matching bar found for user type:', userType, 'retrying in 1000ms...');
     setTimeout(highlightUserTypeInChart, 1000);
   }
 }
