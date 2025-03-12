@@ -22,24 +22,24 @@ async function loadMBTIData() {
       
       // Use fallback data if server data can't be loaded
       return {
-        types: [
-          { type: "ISTJ", percentage: 11.6, category: "Sentinels" },
-          { type: "ISFJ", percentage: 13.8, category: "Sentinels" },
-          { type: "INFJ", percentage: 1.5, category: "Diplomats" },
-          { type: "INTJ", percentage: 2.1, category: "Analysts" },
-          { type: "ISTP", percentage: 5.4, category: "Explorers" },
-          { type: "ISFP", percentage: 8.8, category: "Explorers" },
-          { type: "INFP", percentage: 4.4, category: "Diplomats" },
-          { type: "INTP", percentage: 3.3, category: "Analysts" },
-          { type: "ESTP", percentage: 4.3, category: "Explorers" },
-          { type: "ESFP", percentage: 8.5, category: "Explorers" },
-          { type: "ENFP", percentage: 8.1, category: "Diplomats" },
-          { type: "ENTP", percentage: 3.2, category: "Analysts" },
-          { type: "ESTJ", percentage: 8.7, category: "Sentinels" },
-          { type: "ESFJ", percentage: 12.3, category: "Sentinels" },
-          { type: "ENFJ", percentage: 2.5, category: "Diplomats" },
-          { type: "ENTJ", percentage: 1.8, category: "Analysts" }
-        ]
+        // types: [
+        //   { type: "ISTJ", percentage: 11.6, category: "Sentinels" },
+        //   { type: "ISFJ", percentage: 13.8, category: "Sentinels" },
+        //   { type: "INFJ", percentage: 1.5, category: "Diplomats" },
+        //   { type: "INTJ", percentage: 2.1, category: "Analysts" },
+        //   { type: "ISTP", percentage: 5.4, category: "Explorers" },
+        //   { type: "ISFP", percentage: 8.8, category: "Explorers" },
+        //   { type: "INFP", percentage: 4.4, category: "Diplomats" },
+        //   { type: "INTP", percentage: 3.3, category: "Analysts" },
+        //   { type: "ESTP", percentage: 4.3, category: "Explorers" },
+        //   { type: "ESFP", percentage: 8.5, category: "Explorers" },
+        //   { type: "ENFP", percentage: 8.1, category: "Diplomats" },
+        //   { type: "ENTP", percentage: 3.2, category: "Analysts" },
+        //   { type: "ESTJ", percentage: 8.7, category: "Sentinels" },
+        //   { type: "ESFJ", percentage: 12.3, category: "Sentinels" },
+        //   { type: "ENFJ", percentage: 2.5, category: "Diplomats" },
+        //   { type: "ENTJ", percentage: 1.8, category: "Analysts" }
+        // ]
       };
     }
   } catch (error) {

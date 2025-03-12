@@ -1,8 +1,6 @@
 // index.js - Central file to manage all visualizations
 
-// Import specific visualizations
-// This file serves as a centralized location for importing and exporting all visualizations
-// as new visualizations are added, they should be imported and exported here
+// No more imports - we're using global functions now
 
 /**
  * Main function to initialize all visualizations
@@ -28,11 +26,9 @@ async function initAllVisualizations() {
  * This allows them to be called from event handlers in other files
  */
 function exposeVisualizationFunctions() {
-  // Export functions from mbtiDistribution.js to global scope
-  window.refreshVisualization = refreshVisualization;
-  window.highlightUserTypeInChart = highlightUserTypeInChart;
-  
-  // Add any additional functions that need to be exposed
+  // All functions are already in global scope now
+  // Just ensure initAllVisualizations is exposed
+  window.initAllVisualizations = initAllVisualizations;
 }
 
 // Run when the document is loaded
@@ -41,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
   exposeVisualizationFunctions();
 });
 
-// Export for module systems
-if (typeof module !== 'undefined') {
-  module.exports = {
-    initAllVisualizations
-  };
-} 
+// Make functions available globally
+window.initAllVisualizations = initAllVisualizations;
+window.exposeVisualizationFunctions = exposeVisualizationFunctions; 
