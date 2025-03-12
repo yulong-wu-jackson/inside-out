@@ -900,16 +900,35 @@ p {
 
 /* Chart tooltip */
 .chart-tooltip {
+  transition: opacity 0.3s ease;
   position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 10px;
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   pointer-events: none;
-  z-index: 100;
+  max-width: 250px;
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  transition: opacity 0.2s ease;
+}
+
+.tooltip-header {
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.tooltip-body {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tooltip-body div {
+  margin-bottom: 5px;
 }
 
 /* Responsive adjustments for visualizations */
@@ -935,5 +954,850 @@ p {
   
   .chart-tooltip {
     max-width: 120px;
+  }
+}
+
+/* ------------------------------------------------------------
+   MBTI GROUP CHAT VISUALIZATION STYLES (INSTAGRAM-INSPIRED)
+------------------------------------------------------------ */
+/* Replace previous mbti-chat styles with these new styles */
+.mbti-chat-interface {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  max-height: 800px;
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border: 1px solid #dbdbdb;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Header styles */
+.mbti-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #efefef;
+  background-color: white;
+  z-index: 10;
+}
+
+.mbti-chat-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.mbti-group-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: white;
+  font-weight: 600;
+}
+
+.mbti-chat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mbti-chat-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #262626;
+  margin-bottom: 2px;
+}
+
+.mbti-chat-subtitle {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.mbti-chat-header-right {
+  display: flex;
+}
+
+.mbti-chat-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.mbti-action-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #262626;
+  transition: all 0.2s ease;
+}
+
+.mbti-action-button:hover {
+  color: var(--primary-color);
+}
+
+/* Information button tooltip */
+.info-button {
+  position: relative;
+}
+
+.info-button:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+/* Messages container */
+.mbti-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+/* Make scrollbar more subtle */
+.mbti-chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mbti-chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mbti-chat-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+/* Message styles */
+.mbti-message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  max-width: 90%;
+  animation: message-fade-in 0.3s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.mbti-message-reply {
+  margin-left: 48px;
+  max-width: 85%;
+}
+
+.mbti-message-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 18px;
+  color: white;
+  flex-shrink: 0;
+  line-height: 1; /* Ensure proper centering of emojis */
+  text-align: center; /* Additional centering for emojis */
+  position: relative; /* For absolute positioning of emoji if needed */
+  padding: 0; /* Remove any padding that might affect centering */
+  box-sizing: border-box; /* Ensure padding doesn't affect size */
+}
+
+/* Fix emoji positioning within avatar */
+.mbti-message-avatar span, 
+.mbti-message-avatar i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0); /* Fine-tune vertical position */
+  line-height: 0; /* Ensure perfect vertical centering */
+}
+
+.mbti-message-content {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% - 44px);
+}
+
+.mbti-message-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #262626;
+}
+
+.mbti-message-bubble {
+  background-color: white;
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #262626;
+  position: relative;
+  word-break: break-word;
+}
+
+.mbti-message-reply .mbti-message-bubble {
+  background-color: #f1f1f1;
+}
+
+.mbti-message-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.mbti-message-time {
+  font-size: 11px;
+}
+
+.mbti-message-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Typing indicator */
+.mbti-typing-indicator {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 8px;
+  max-width: 90%;
+}
+
+.mbti-typing-bubble {
+  background-color: #f1f1f1;
+  border-radius: 18px;
+  padding: 16px;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #bbb;
+  animation: typing-dot 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Footer with input */
+.mbti-chat-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #efefef;
+  background-color: white;
+}
+
+.mbti-chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 24px;
+  padding: 8px 16px;
+}
+
+.mbti-chat-input-icon {
+  margin-right: 12px;
+  color: #8e8e8e;
+  font-size: 20px;
+}
+
+.mbti-chat-input {
+  flex: 1;
+  padding: 8px 0;
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+/* GSAP animation keyframes */
+@keyframes message-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+}
+
+/* Change the "Who Comments Most" section styling */
+#who-comments-most .mbti-container {
+  max-width: 1000px; /* Wider container for the chat */
+}
+
+/* Hide any previous chat container styles */
+.mbti-chat-container, 
+.mbti-chat-message, 
+.mbti-chat-avatar,
+.mbti-chat-bubble {
+  /* Reset previous styles */
+  display: none;
+}
+
+/* Fix for the Who Comments Most section */
+#who-comments-most .visualization-container {
+  background: transparent;
+  box-shadow: none;
+  height: auto;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+#who-comments-most .mbti-card {
+  padding: 0; /* Remove padding to maximize space for chat */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Make sure the visualization-container doesn't hide our chat interface */
+#who-comments-most .visualization-container .loading {
+  z-index: 20;
+}
+
+/* Make sure the loading spinner appears in front of the content */
+#who-comments-most .loading {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ensure MBTI message elements are visible */
+.mbti-message {
+  display: flex !important;
+}
+
+.mbti-message-avatar,
+.mbti-message-bubble {
+  display: block !important;
+}
+
+/* Flip card functionality */
+.flip-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 85vh;
+  max-height: 800px;
+}
+
+.flipper {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-chart-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.bar-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bar-chart-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+  margin: 0;
+}
+
+.flip-back-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.flip-back-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.horizontal-bar-chart {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove scroll trigger debug markers */
+.gsap-marker-start,
+.gsap-marker-end,
+.gsap-marker-scroller-start, 
+.gsap-marker-scroller-end {
+  display: none !important;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+  .flip-container, .mbti-chat-interface {
+    height: 75vh;
+  }
+  
+  .horizontal-bar-chart {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flip-container, .mbti-chat-interface {
+    height: 70vh;
+    border-radius: 12px;
+  }
+  
+  .mbti-group-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mbti-chat-title {
+    font-size: 16px;
+  }
+  
+  .mbti-chat-subtitle {
+    font-size: 12px;
+  }
+  
+  .mbti-chat-messages {
+    padding: 16px;
+  }
+  
+  .mbti-message {
+    max-width: 95%;
+  }
+  
+  .bar-chart-header h3 {
+    font-size: 16px;
+  }
+  
+  .flip-back-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-container, .mbti-chat-interface {
+    height: 80vh;
+    border-radius: 8px;
+  }
+  
+  .mbti-chat-actions {
+    gap: 12px;
+  }
+  
+  .mbti-group-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  
+  .mbti-chat-messages {
+    padding: 12px;
+  }
+  
+  .mbti-message-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .mbti-message-bubble {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .mbti-message-reply {
+    margin-left: 38px;
+  }
+  
+  .mbti-chat-input-wrapper {
+    padding: 6px 12px;
+  }
+  
+  .mbti-chat-input {
+    font-size: 13px;
+  }
+  
+  .bar-chart-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .bar-chart-header h3 {
+    font-size: 14px;
+  }
+}
+
+/* System message styles for group creation */
+.mbti-system-message {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.mbti-system-bubble {
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #65676B;
+  text-align: center;
+  position: relative;
+}
+
+.mbti-system-text {
+  font-weight: 500;
+}
+
+.mbti-system-time {
+  font-size: 11px;
+  margin-left: 5px;
+  opacity: 0.7;
+}
+
+.flip-stats-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.flip-stats-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.flip-stats-button i {
+  font-size: 12px;
+}
+
+/* ------------------------------------------------------------
+   FAMOUS PEOPLE VISUALIZATION STYLES
+------------------------------------------------------------ */
+#famous-people-graph {
+  position: relative;
+  min-height: 500px;
+  width: 100%;
+}
+
+.mbti-bubbles-svg, .detailed-view-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mbti-bubble circle {
+  transition: all 0.3s ease;
+}
+
+.mbti-bubble:hover circle {
+  stroke: #333;
+  stroke-width: 3px;
+}
+
+.user-mbti-bubble {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+/* Enhanced styling for user's MBTI type */
+.user-mbti circle {
+  stroke: #333;
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+}
+
+.user-mbti text {
+  font-weight: bold;
+  font-size: 14px !important;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.famous-people-instructions {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 100;
+  transition: opacity 1s ease;
+}
+
+.instructions-content {
+  position: relative;
+}
+
+.close-instructions {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 20px;
+  padding: 0 5px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-instructions:hover {
+  color: var(--text-color);
+  transform: scale(1.1);
+}
+
+.instructions-content h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.instructions-content p {
+  margin-bottom: 5px;
+}
+
+.famous-people-back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.famous-people-back-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.famous-people-title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.famous-people-title h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+/* Node styles */
+.mbti-node circle {
+  stroke-width: 3px;
+}
+
+.person-node circle {
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.person-node:hover circle {
+  opacity: 1;
+}
+
+.person-node text {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.person-node:hover text {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Link styles */
+.link {
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+  transition: stroke-opacity 0.3s ease;
+}
+
+.node:hover + .link {
+  stroke-opacity: 0.8;
+  stroke-width: 2px;
+}
+
+/* Error message styling */
+.error-message, .empty-state-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 80%;
+}
+
+.error-message h3, .empty-state-message h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.error-message p, .empty-state-message p {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+/* Style differences between error and empty state */
+.empty-state-message {
+  background-color: rgba(249, 250, 251, 0.95);
+  border-left: 4px solid var(--primary-light);
+}
+
+/* Responsive styles for famous people visualization */
+@media (max-width: 768px) {
+  #famous-people-graph {
+    min-height: 400px;
+  }
+  
+  .famous-people-title {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #famous-people-graph {
+    min-height: 350px;
+  }
+  
+  .famous-people-back-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .famous-people-title h3 {
+    font-size: 14px;
+  }
+  
+  .person-node text {
+    font-size: 10px;
   }
 } 

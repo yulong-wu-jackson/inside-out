@@ -1,8 +1,6 @@
-// index.js - Central file for all visualizations
+// index.js - Central file to manage all visualizations
 
-// Import specific visualizations
-// This file serves as a centralized location for importing and exporting all visualizations
-// as new visualizations are added, they should be imported and exported here
+// No more imports - we're using global functions now
 
 /**
  * Main function to initialize all visualizations
@@ -16,6 +14,14 @@ async function initAllVisualizations() {
     await initMBTIDistributionViz();
   }
   
+  // Initialize Famous People visualization
+  if (document.getElementById('famous-people-graph')) {
+    console.log('Initializing Famous People visualization from index.js');
+    if (typeof initFamousPeopleVisualization === 'function') {
+      initFamousPeopleVisualization();
+    }
+  }
+  
   // Future visualizations will be initialized here
   // Example:
   // if (document.getElementById('new-visualization-container')) {
@@ -23,20 +29,22 @@ async function initAllVisualizations() {
   // }
 }
 
-// Export global visualization functions to window object
-// This allows them to be called from other modules without explicit imports
+/**
+ * Expose visualization functions to the global scope
+ * This allows them to be called from event handlers in other files
+ */
 function exposeVisualizationFunctions() {
-  // MBTI Distribution functions
-  window.refreshVisualization = refreshVisualization;
-  window.highlightUserTypeInChart = highlightUserTypeInChart;
-  
-  // Future visualization functions will be exposed here
+  // All functions are already in global scope now
+  // Just ensure initAllVisualizations is exposed
+  window.initAllVisualizations = initAllVisualizations;
 }
 
-// Export functions for use in main.js
-if (typeof module !== 'undefined') {
-  module.exports = {
-    initAllVisualizations,
-    exposeVisualizationFunctions
-  };
-} 
+// Run when the document is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Expose functions to global scope
+  exposeVisualizationFunctions();
+});
+
+// Make functions available globally
+window.initAllVisualizations = initAllVisualizations;
+window.exposeVisualizationFunctions = exposeVisualizationFunctions; 
