@@ -14,6 +14,14 @@ async function initAllVisualizations() {
     await initMBTIDistributionViz();
   }
   
+  // Initialize Famous People visualization
+  if (document.getElementById('famous-people-graph')) {
+    console.log('Initializing Famous People visualization from index.js');
+    if (typeof initFamousPeopleVisualization === 'function') {
+      initFamousPeopleVisualization();
+    }
+  }
+  
   // Future visualizations will be initialized here
   // Example:
   // if (document.getElementById('new-visualization-container')) {
