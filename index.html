@@ -241,12 +241,13 @@
       <div class="mbti-container">
         <div class="mbti-card">
           <h2><span class="highlight">Music Energy</span> by Type</h2>
-          <p>Music can evoke different emotions and energies. Let's explore the energy levels of different music genres based on MBTI types.</p>
-
-          <div id="music-energy-analysis" class="visualization-container">
-            <!-- D3 visualization will be rendered here -->
-            <div id="battery-visualization" class="visualization-container"></div>
-          </div>
+          <p>
+            Music can evoke different emotions and energies. Let's explore the energy
+            levels of different music genres based on MBTI types.
+          </p>
+    
+          <!-- This container is where the MBTI tabs and chart content will be injected by JS -->
+          <div id="music-energy-analysis" class="visualization-container"></div>
         </div>
       </div>
     </section>
@@ -290,6 +291,7 @@
   <!-- Main script -->
   <script src="js/main.js"></script>
   <script src="js/visualizations/battery.js"></script>
+  <script src="js/visualizations/music_energy.js"></script>
   
   <!-- Added Famous People visualization -->
   <script src="js/visualizations/famousPeople.js"></script>
