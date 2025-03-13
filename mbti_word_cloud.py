@@ -5,6 +5,11 @@ import nltk
 from nltk.corpus import stopwords
 import os
 
+# Global list of custom words to filter out
+CUSTOM_FILTER_WORDS = ["ive", "dont", "would", "one", "like", "think", "get", "know", 
+                        "much", "say", "see", "want", "things", "even", "just", 
+                        "going"]
+
 # Download necessary NLTK data (only needs to be run once)
 def download_nltk_data():
     try:
@@ -40,9 +45,11 @@ def get_word_counts(posts, num_words=20):
     # Tokenize
     words = nltk.word_tokenize(clean_text_data)
     
-    # Remove stop words
+    # Remove stop words and custom filter words
     stop_words = set(stopwords.words('english'))
-    filtered_words = [word for word in words if word.lower() not in stop_words and len(word) > 2]
+    filtered_words = [word for word in words if word.lower() not in stop_words 
+                     and word.lower() not in CUSTOM_FILTER_WORDS 
+                     and len(word) > 2]
     
     # Count word frequencies
     word_counts = Counter(filtered_words)
@@ -108,7 +115,7 @@ if __name__ == "__main__":
     
     # Input and output file paths
     input_file = "data/rawJson/post/mbtiPost.json"
-    output_file = "data/processedJson/mbti_word_counts.json"
+    output_file = "data/processedJson/mbti_word_cloud_new.json"
 
     # Process the data
     process_mbti_posts(input_file, output_file) 
