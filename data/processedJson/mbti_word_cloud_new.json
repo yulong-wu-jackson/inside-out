@@ -3,14 +3,6 @@
     "mbti_type": "INFJ",
     "word_counts": [
       {
-        "word": "people",
-        "count": 4175
-      },
-      {
-        "word": "really",
-        "count": 3052
-      },
-      {
         "word": "infj",
         "count": 2682
       },
@@ -81,20 +73,20 @@
       {
         "word": "never",
         "count": 1300
+      },
+      {
+        "word": "find",
+        "count": 1282
+      },
+      {
+        "word": "thing",
+        "count": 1274
       }
     ]
   },
   {
     "mbti_type": "ENTP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 1907
-      },
-      {
-        "word": "really",
-        "count": 1429
-      },
       {
         "word": "entp",
         "count": 1271
@@ -166,20 +158,20 @@
       {
         "word": "thing",
         "count": 605
+      },
+      {
+        "word": "feel",
+        "count": 604
+      },
+      {
+        "word": "entps",
+        "count": 576
       }
     ]
   },
   {
     "mbti_type": "INTP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 3547
-      },
-      {
-        "word": "really",
-        "count": 2465
-      },
       {
         "word": "intp",
         "count": 2091
@@ -251,6 +243,14 @@
       {
         "word": "cant",
         "count": 1075
+      },
+      {
+        "word": "someone",
+        "count": 1060
+      },
+      {
+        "word": "though",
+        "count": 1059
       }
     ]
   },
@@ -258,16 +258,8 @@
     "mbti_type": "INTJ",
     "word_counts": [
       {
-        "word": "people",
-        "count": 3474
-      },
-      {
         "word": "intj",
         "count": 2370
-      },
-      {
-        "word": "really",
-        "count": 2121
       },
       {
         "word": "time",
@@ -336,6 +328,14 @@
       {
         "word": "youre",
         "count": 1055
+      },
+      {
+        "word": "intjs",
+        "count": 1055
+      },
+      {
+        "word": "cant",
+        "count": 960
       }
     ]
   },
@@ -343,16 +343,8 @@
     "mbti_type": "ENTJ",
     "word_counts": [
       {
-        "word": "people",
-        "count": 517
-      },
-      {
         "word": "entj",
         "count": 366
-      },
-      {
-        "word": "really",
-        "count": 317
       },
       {
         "word": "time",
@@ -421,20 +413,20 @@
       {
         "word": "thats",
         "count": 160
+      },
+      {
+        "word": "sure",
+        "count": 157
+      },
+      {
+        "word": "thing",
+        "count": 149
       }
     ]
   },
   {
     "mbti_type": "ENFJ",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 594
-      },
-      {
-        "word": "really",
-        "count": 449
-      },
       {
         "word": "enfj",
         "count": 372
@@ -506,20 +498,20 @@
       {
         "word": "enfjs",
         "count": 161
+      },
+      {
+        "word": "need",
+        "count": 160
+      },
+      {
+        "word": "thats",
+        "count": 158
       }
     ]
   },
   {
     "mbti_type": "INFP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 3829
-      },
-      {
-        "word": "really",
-        "count": 3353
-      },
       {
         "word": "feel",
         "count": 2477
@@ -591,20 +583,20 @@
       {
         "word": "could",
         "count": 1185
+      },
+      {
+        "word": "find",
+        "count": 1173
+      },
+      {
+        "word": "cant",
+        "count": 1162
       }
     ]
   },
   {
     "mbti_type": "ENFP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 1294
-      },
-      {
-        "word": "really",
-        "count": 1172
-      },
       {
         "word": "enfp",
         "count": 1057
@@ -676,20 +668,20 @@
       {
         "word": "someone",
         "count": 440
+      },
+      {
+        "word": "life",
+        "count": 434
+      },
+      {
+        "word": "enfps",
+        "count": 429
       }
     ]
   },
   {
     "mbti_type": "ISFP",
     "word_counts": [
-      {
-        "word": "really",
-        "count": 610
-      },
-      {
-        "word": "people",
-        "count": 573
-      },
       {
         "word": "isfp",
         "count": 463
@@ -761,20 +753,20 @@
       {
         "word": "make",
         "count": 199
+      },
+      {
+        "word": "cant",
+        "count": 195
+      },
+      {
+        "word": "find",
+        "count": 195
       }
     ]
   },
   {
     "mbti_type": "ISTP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 985
-      },
-      {
-        "word": "really",
-        "count": 751
-      },
       {
         "word": "time",
         "count": 643
@@ -846,20 +838,20 @@
       {
         "word": "thats",
         "count": 346
+      },
+      {
+        "word": "need",
+        "count": 328
+      },
+      {
+        "word": "cant",
+        "count": 323
       }
     ]
   },
   {
     "mbti_type": "ISFJ",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 367
-      },
-      {
-        "word": "really",
-        "count": 334
-      },
       {
         "word": "isfj",
         "count": 296
@@ -931,20 +923,20 @@
       {
         "word": "youre",
         "count": 123
+      },
+      {
+        "word": "isfjs",
+        "count": 119
+      },
+      {
+        "word": "never",
+        "count": 117
       }
     ]
   },
   {
     "mbti_type": "ISTJ",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 598
-      },
-      {
-        "word": "really",
-        "count": 444
-      },
       {
         "word": "istj",
         "count": 439
@@ -1016,20 +1008,20 @@
       {
         "word": "thats",
         "count": 203
+      },
+      {
+        "word": "friends",
+        "count": 203
+      },
+      {
+        "word": "though",
+        "count": 202
       }
     ]
   },
   {
     "mbti_type": "ESTP",
     "word_counts": [
-      {
-        "word": "people",
-        "count": 267
-      },
-      {
-        "word": "really",
-        "count": 233
-      },
       {
         "word": "estp",
         "count": 221
@@ -1101,6 +1093,14 @@
       {
         "word": "someone",
         "count": 94
+      },
+      {
+        "word": "make",
+        "count": 93
+      },
+      {
+        "word": "never",
+        "count": 93
       }
     ]
   },
@@ -1108,16 +1108,8 @@
     "mbti_type": "ESFP",
     "word_counts": [
       {
-        "word": "people",
-        "count": 98
-      },
-      {
         "word": "esfp",
         "count": 82
-      },
-      {
-        "word": "really",
-        "count": 72
       },
       {
         "word": "feel",
@@ -1186,6 +1178,14 @@
       {
         "word": "life",
         "count": 27
+      },
+      {
+        "word": "sure",
+        "count": 27
+      },
+      {
+        "word": "always",
+        "count": 27
       }
     ]
   },
@@ -1197,16 +1197,8 @@
         "count": 54
       },
       {
-        "word": "people",
-        "count": 52
-      },
-      {
         "word": "type",
         "count": 42
-      },
-      {
-        "word": "really",
-        "count": 40
       },
       {
         "word": "need",
@@ -1271,6 +1263,14 @@
       {
         "word": "someone",
         "count": 23
+      },
+      {
+        "word": "might",
+        "count": 21
+      },
+      {
+        "word": "find",
+        "count": 21
       }
     ]
   },
@@ -1278,16 +1278,8 @@
     "mbti_type": "ESFJ",
     "word_counts": [
       {
-        "word": "people",
-        "count": 166
-      },
-      {
         "word": "esfj",
         "count": 143
-      },
-      {
-        "word": "really",
-        "count": 123
       },
       {
         "word": "esfjs",
@@ -1356,6 +1348,14 @@
       {
         "word": "friends",
         "count": 50
+      },
+      {
+        "word": "make",
+        "count": 48
+      },
+      {
+        "word": "sure",
+        "count": 48
       }
     ]
   }
