@@ -105,6 +105,11 @@ function initMBTISelection() {
       console.log('DEBUG - MBTI type unchanged, just highlighting');
       highlightUserTypeInChart();
     }
+
+    // If window.updateWordCloudType exists, call it with the new MBTI type
+    if (window.updateWordCloudType) {
+      window.updateWordCloudType(mbtiType);
+    }
   });
   
   // Skip button click
