@@ -50,14 +50,14 @@
         text-align: center;
       }
   
-      /* --- We no longer use .mbti-letter/.mbti-word; we build inline blocks below --- */
+      /* --- Title area: letters and expansions side by side --- */
       .mbti-title {
         margin-bottom: 20px;
       }
       .mbti-letter-block {
-        display: inline-block; /* Keep each letter+word pair together horizontally */
+        display: inline-block;
         vertical-align: middle;
-        margin-right: 30px; /* Spacing between each MBTI letter set */
+        margin-right: 30px; /* spacing between letter blocks */
       }
   
       /* --- Chart styles (horizontal bars) --- */
@@ -86,7 +86,6 @@
       }
       .bar-fill {
         height: 100%;
-        background-color: #4287f5;
         text-align: right;
         transition: width 0.3s;
       }
@@ -275,7 +274,10 @@
           <div class="bar-row">
             <span class="bar-label">${label}</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width:${widthPercent}%;">
+              <div 
+                class="bar-fill" 
+                style="width:${widthPercent}%;background-color:${color};"
+              >
                 <span class="bar-value">${displayVal}</span>
               </div>
             </div>
