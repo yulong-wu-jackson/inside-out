@@ -8,7 +8,7 @@ import os
 # Global list of custom words to filter out
 CUSTOM_FILTER_WORDS = ["ive", "dont", "would", "one", "like", "think", "get", "know", 
                         "much", "say", "see", "want", "things", "even", "just", 
-                        "going"]
+                        "going", "people", "really"]
 
 # Download necessary NLTK data (only needs to be run once)
 def download_nltk_data():
