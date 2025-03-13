@@ -11,32 +11,31 @@
         justify-content: center;
         gap: 6px;
         margin-bottom: 0;
-        border-bottom: 1px solid #ccc; /* optional "tab bar" look */
+        border-bottom: 1px solid #ccc;
         padding: 10px 0;
       }
-      /* Each tab has a fixed width so all 16 can fit in one row on typical displays */
       .mbti-tab {
-        flex: 0 0 40px;   /* fixed width: 40px */
+        flex: 0 0 40px;
         cursor: pointer;
-        background-color: #e3e3e3;
         padding: 4px 2px;
         border-radius: 4px 4px 0 0;
         border: 1px solid #ccc;
-        border-bottom: none; /* so it looks like connected tabs */
+        border-bottom: none;
         transition: background-color 0.2s;
         font-weight: bold;
         font-size: 0.75rem;
         text-align: center;
-        white-space: nowrap; /* keep type on one line */
+        white-space: nowrap;
+        color: #ffffff; /* Use white text since tabs are colored */
       }
       .mbti-tab:hover {
-        background-color: #ddd;
+        filter: brightness(1.1);
       }
   
       /* --- Two-column layout for the main content --- */
       #music-energy-content {
         display: flex;
-        flex-wrap: wrap; /* fallback if screen is narrow */
+        flex-wrap: wrap;
         margin-top: 20px;
       }
       #music-energy-left-column {
@@ -51,20 +50,14 @@
         text-align: center;
       }
   
-      /* --- MBTI title at the top of left column --- */
+      /* --- We no longer use .mbti-letter/.mbti-word; we build inline blocks below --- */
       .mbti-title {
         margin-bottom: 20px;
       }
-      .mbti-letter {
-        font-size: 48px;
-        font-weight: bold;
+      .mbti-letter-block {
+        display: inline-block; /* Keep each letter+word pair together horizontally */
         vertical-align: middle;
-        margin-right: 4px;
-      }
-      .mbti-word {
-        font-size: 18px;
-        font-weight: normal;
-        margin-right: 8px;
+        margin-right: 30px; /* Spacing between each MBTI letter set */
       }
   
       /* --- Chart styles (horizontal bars) --- */
@@ -76,7 +69,7 @@
       }
       .bar-label {
         display: inline-block;
-        width: 110px; /* label width */
+        width: 110px;
         font-weight: bold;
         vertical-align: middle;
       }
@@ -84,7 +77,7 @@
         display: inline-block;
         position: relative;
         height: 24px;
-        width: 300px; /* total bar width */
+        width: 300px;
         background-color: #eee;
         vertical-align: middle;
         margin-left: 8px;
@@ -152,7 +145,7 @@
     rightColumn.id = 'music-energy-right-column';
     contentContainer.appendChild(rightColumn);
   
-    // 3) Map for expanding each MBTI letter (e.g., 'I' => 'ntroversion')
+    // 3) Map for expanding each MBTI letter
     const expansions = {
       I: 'ntroversion',
       E: 'xtraversion',
@@ -164,7 +157,27 @@
       P: 'erceiving'
     };
   
-    // 4) Fetch the MBTI data from data/raw/mbti_means.json
+    // 4) Color palette for each MBTI type
+    const typeColors = {
+      ISTJ: '#4C7DA5',
+      ISFJ: '#4C9CA5',
+      INFJ: '#746EAA',
+      INTJ: '#9D67A5',
+      ISTP: '#A9715F',
+      ISFP: '#A68E5F',
+      INFP: '#7AC7C4',
+      INTP: '#8ECDC9',
+      ESTP: '#AA7442',
+      ESFP: '#D0B140',
+      ENFP: '#FFC107',
+      ENTP: '#FFB14C',
+      ESTJ: '#5F9EA0',
+      ESFJ: '#7FC8A9',
+      ENFJ: '#B39DDB',
+      ENTJ: '#CE93D8'
+    };
+  
+    // 5) Fetch the MBTI data from data/raw/mbti_means.json
     fetch('data/raw/mbti_means.json')
       .then(response => {
         if (!response.ok) {
@@ -173,7 +186,6 @@
         return response.json();
       })
       .then(mbtiData => {
-        // Sort the MBTI keys if you like
         const mbtiTypes = Object.keys(mbtiData).sort();
   
         // Build a tab for each MBTI type
@@ -181,11 +193,15 @@
           const tab = document.createElement('div');
           tab.className = 'mbti-tab';
           tab.textContent = type;
+  
+          // Apply background color for the tab
+          tab.style.backgroundColor = typeColors[type] || '#999';
+  
           tab.addEventListener('click', () => displayMBTI(type, mbtiData));
           tabsContainer.appendChild(tab);
         });
   
-        // Show the first MBTI type by default
+        // Display the first MBTI type by default
         if (mbtiTypes.length > 0) {
           displayMBTI(mbtiTypes[0], mbtiData);
         }
@@ -194,25 +210,40 @@
         console.error('Error loading MBTI data:', error);
       });
   
-    // 5) Function that renders a chosen MBTI's data into the two columns
+    // 6) Renders a chosen MBTI's data into the two columns
     function displayMBTI(type, mbtiData) {
       // Clear previous content
       leftColumn.innerHTML = '';
       rightColumn.innerHTML = '';
   
-      // Build stylized MBTI title
+      // Determine color for the current type
+      const color = typeColors[type] || '#999';
+  
+      // Build the MBTI title with each letter and expansion in one line
       let titleHtml = '<div class="mbti-title">';
       for (let i = 0; i < type.length; i++) {
         const letter = type[i];
         const word = expansions[letter] || '';
+  
         titleHtml += `
-          <span class="mbti-letter">${letter}</span>
-          <span class="mbti-word">${word}</span>
+          <span class="mbti-letter-block">
+            <span style="font-size:30px;font-weight:bold;color:${color};">
+              ${letter}
+            </span>
+            <span style="
+              font-size:14px;
+              color:${color};
+              margin-left:5px;
+              border-bottom:2px solid ${color};
+            ">
+              ${word}
+            </span>
+          </span>
         `;
       }
       titleHtml += '</div>';
   
-      // A placeholder for a playlist
+      // A placeholder playlist
       const playlistHtml = `
         <div>
           <strong>Playlist for ${type}:</strong>
@@ -230,12 +261,12 @@
       const loudnessMax = 0;
       const acousticMax = 1;
   
-      // Helper to clamp values to [0..100]
+      // Helper to clamp to [0..100]
       function clampPercent(value) {
         return Math.min(Math.max(value, 0), 100);
       }
   
-      // Build a single bar
+      // Build one horizontal bar
       function makeBar(label, value, minVal, maxVal) {
         const widthPercent = clampPercent(((value - minVal) / (maxVal - minVal)) * 100);
         const displayVal = value.toFixed(2);
@@ -252,7 +283,7 @@
         `;
       }
   
-      // Combine bars for the four stats
+      // Gather all four bars
       let barChartHtml = '<div class="bar-chart">';
       barChartHtml += makeBar('Tempo', stats.tempo_mean, 0, tempoMax);
       barChartHtml += makeBar('Energy', stats.energy_mean, 0, energyMax);
@@ -260,10 +291,10 @@
       barChartHtml += makeBar('Acoustic', stats.acousticness_mean, 0, acousticMax);
       barChartHtml += '</div>';
   
-      // Insert the final HTML into the left column
+      // Insert into the left column
       leftColumn.innerHTML = titleHtml + playlistHtml + barChartHtml;
   
-      // Right column: placeholder image for the MBTI type
+      // Right column placeholder image
       const placeholderDiv = document.createElement('div');
       placeholderDiv.className = 'mbti-image-placeholder';
       placeholderDiv.textContent = `Image for ${type}`;
