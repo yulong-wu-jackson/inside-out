@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Initializing all visualizations from main.js...');
     initAllVisualizations();
     initWhoCommentsMostChart();
+    initWordCloudVisualization();
   }, 500);
   
   // Add window resize handler for responsive visualizations

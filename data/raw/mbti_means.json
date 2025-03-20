@@ -1,0 +1,98 @@
+{
+    "ENFJ": {
+        "tempo_mean": 121.69834469134379,
+        "energy_mean": 0.6130686499333737,
+        "loudness_mean": -7.350223135259924,
+        "acousticness_mean": 0.2769926600037078
+    },
+    "ENFP": {
+        "tempo_mean": 122.69923170054517,
+        "energy_mean": 0.665136963447539,
+        "loudness_mean": -6.686633581128216,
+        "acousticness_mean": 0.23105418536302974
+    },
+    "ENTJ": {
+        "tempo_mean": 122.62748673111415,
+        "energy_mean": 0.6772131245786491,
+        "loudness_mean": -6.374244464700438,
+        "acousticness_mean": 0.17987480872793737
+    },
+    "ENTP": {
+        "tempo_mean": 123.09848605261773,
+        "energy_mean": 0.6882275816679835,
+        "loudness_mean": -6.378167740497484,
+        "acousticness_mean": 0.16214654122656477
+    },
+    "ESFJ": {
+        "tempo_mean": 120.96237516468341,
+        "energy_mean": 0.6282749075286524,
+        "loudness_mean": -6.90620967554499,
+        "acousticness_mean": 0.26920518636797086
+    },
+    "ESFP": {
+        "tempo_mean": 123.09760106319303,
+        "energy_mean": 0.6919414244617512,
+        "loudness_mean": -6.265767276493132,
+        "acousticness_mean": 0.1870973332621605
+    },
+    "ESTJ": {
+        "tempo_mean": 121.86768923740131,
+        "energy_mean": 0.6591097751190782,
+        "loudness_mean": -6.60756353300702,
+        "acousticness_mean": 0.21189977617258537
+    },
+    "ESTP": {
+        "tempo_mean": 124.63965867515336,
+        "energy_mean": 0.7046359809535733,
+        "loudness_mean": -6.224987680845509,
+        "acousticness_mean": 0.16145892946897364
+    },
+    "INFJ": {
+        "tempo_mean": 118.76148138867568,
+        "energy_mean": 0.5648126459511499,
+        "loudness_mean": -8.017216698852042,
+        "acousticness_mean": 0.34856490841593146
+    },
+    "INFP": {
+        "tempo_mean": 120.29109589417071,
+        "energy_mean": 0.5724030619458503,
+        "loudness_mean": -7.908142047159927,
+        "acousticness_mean": 0.3445111210018237
+    },
+    "INTJ": {
+        "tempo_mean": 122.3804922065577,
+        "energy_mean": 0.6309893983821766,
+        "loudness_mean": -7.368658627114387,
+        "acousticness_mean": 0.24125792905247073
+    },
+    "INTP": {
+        "tempo_mean": 122.77968081180295,
+        "energy_mean": 0.631635107019248,
+        "loudness_mean": -7.664007478011156,
+        "acousticness_mean": 0.24765240211099893
+    },
+    "ISFJ": {
+        "tempo_mean": 120.94345416150816,
+        "energy_mean": 0.543273479318623,
+        "loudness_mean": -8.311072770463214,
+        "acousticness_mean": 0.3915219407196313
+    },
+    "ISFP": {
+        "tempo_mean": 121.1770006022572,
+        "energy_mean": 0.6181355999847751,
+        "loudness_mean": -7.172015805009544,
+        "acousticness_mean": 0.2791843389230464
+    },
+    "ISTJ": {
+        "tempo_mean": 121.23845866377077,
+        "energy_mean": 0.5876281889021311,
+        "loudness_mean": -8.059672263722046,
+        "acousticness_mean": 0.310627307107183
+    },
+    "ISTP": {
+        "tempo_mean": 121.69681375847043,
+        "energy_mean": 0.6602838766204889,
+        "loudness_mean": -6.892430508150937,
+        "acousticness_mean": 0.2034451474705714
+    }
+}

@@ -1,0 +1,1362 @@
+[
+  {
+    "mbti_type": "INFJ",
+    "word_counts": [
+      {
+        "word": "infj",
+        "count": 2682
+      },
+      {
+        "word": "feel",
+        "count": 2438
+      },
+      {
+        "word": "time",
+        "count": 2377
+      },
+      {
+        "word": "love",
+        "count": 2014
+      },
+      {
+        "word": "good",
+        "count": 1820
+      },
+      {
+        "word": "way",
+        "count": 1773
+      },
+      {
+        "word": "something",
+        "count": 1728
+      },
+      {
+        "word": "always",
+        "count": 1599
+      },
+      {
+        "word": "also",
+        "count": 1534
+      },
+      {
+        "word": "well",
+        "count": 1533
+      },
+      {
+        "word": "lot",
+        "count": 1515
+      },
+      {
+        "word": "type",
+        "count": 1503
+      },
+      {
+        "word": "life",
+        "count": 1479
+      },
+      {
+        "word": "someone",
+        "count": 1461
+      },
+      {
+        "word": "make",
+        "count": 1402
+      },
+      {
+        "word": "youre",
+        "count": 1357
+      },
+      {
+        "word": "could",
+        "count": 1331
+      },
+      {
+        "word": "never",
+        "count": 1300
+      },
+      {
+        "word": "find",
+        "count": 1282
+      },
+      {
+        "word": "thing",
+        "count": 1274
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENTP",
+    "word_counts": [
+      {
+        "word": "entp",
+        "count": 1271
+      },
+      {
+        "word": "time",
+        "count": 989
+      },
+      {
+        "word": "good",
+        "count": 845
+      },
+      {
+        "word": "way",
+        "count": 838
+      },
+      {
+        "word": "youre",
+        "count": 786
+      },
+      {
+        "word": "type",
+        "count": 776
+      },
+      {
+        "word": "well",
+        "count": 769
+      },
+      {
+        "word": "make",
+        "count": 729
+      },
+      {
+        "word": "something",
+        "count": 727
+      },
+      {
+        "word": "love",
+        "count": 722
+      },
+      {
+        "word": "also",
+        "count": 710
+      },
+      {
+        "word": "could",
+        "count": 667
+      },
+      {
+        "word": "always",
+        "count": 654
+      },
+      {
+        "word": "lot",
+        "count": 623
+      },
+      {
+        "word": "never",
+        "count": 621
+      },
+      {
+        "word": "actually",
+        "count": 621
+      },
+      {
+        "word": "find",
+        "count": 613
+      },
+      {
+        "word": "thing",
+        "count": 605
+      },
+      {
+        "word": "feel",
+        "count": 604
+      },
+      {
+        "word": "entps",
+        "count": 576
+      }
+    ]
+  },
+  {
+    "mbti_type": "INTP",
+    "word_counts": [
+      {
+        "word": "intp",
+        "count": 2091
+      },
+      {
+        "word": "time",
+        "count": 1927
+      },
+      {
+        "word": "something",
+        "count": 1523
+      },
+      {
+        "word": "way",
+        "count": 1522
+      },
+      {
+        "word": "also",
+        "count": 1451
+      },
+      {
+        "word": "good",
+        "count": 1409
+      },
+      {
+        "word": "feel",
+        "count": 1385
+      },
+      {
+        "word": "make",
+        "count": 1266
+      },
+      {
+        "word": "could",
+        "count": 1219
+      },
+      {
+        "word": "never",
+        "count": 1194
+      },
+      {
+        "word": "well",
+        "count": 1177
+      },
+      {
+        "word": "find",
+        "count": 1159
+      },
+      {
+        "word": "lot",
+        "count": 1151
+      },
+      {
+        "word": "youre",
+        "count": 1134
+      },
+      {
+        "word": "love",
+        "count": 1133
+      },
+      {
+        "word": "always",
+        "count": 1128
+      },
+      {
+        "word": "type",
+        "count": 1113
+      },
+      {
+        "word": "cant",
+        "count": 1075
+      },
+      {
+        "word": "someone",
+        "count": 1060
+      },
+      {
+        "word": "though",
+        "count": 1059
+      }
+    ]
+  },
+  {
+    "mbti_type": "INTJ",
+    "word_counts": [
+      {
+        "word": "intj",
+        "count": 2370
+      },
+      {
+        "word": "time",
+        "count": 2003
+      },
+      {
+        "word": "something",
+        "count": 1482
+      },
+      {
+        "word": "good",
+        "count": 1421
+      },
+      {
+        "word": "way",
+        "count": 1412
+      },
+      {
+        "word": "also",
+        "count": 1343
+      },
+      {
+        "word": "feel",
+        "count": 1309
+      },
+      {
+        "word": "type",
+        "count": 1274
+      },
+      {
+        "word": "make",
+        "count": 1248
+      },
+      {
+        "word": "well",
+        "count": 1201
+      },
+      {
+        "word": "could",
+        "count": 1168
+      },
+      {
+        "word": "someone",
+        "count": 1135
+      },
+      {
+        "word": "find",
+        "count": 1125
+      },
+      {
+        "word": "never",
+        "count": 1116
+      },
+      {
+        "word": "love",
+        "count": 1094
+      },
+      {
+        "word": "always",
+        "count": 1091
+      },
+      {
+        "word": "lot",
+        "count": 1085
+      },
+      {
+        "word": "youre",
+        "count": 1055
+      },
+      {
+        "word": "intjs",
+        "count": 1055
+      },
+      {
+        "word": "cant",
+        "count": 960
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENTJ",
+    "word_counts": [
+      {
+        "word": "entj",
+        "count": 366
+      },
+      {
+        "word": "time",
+        "count": 274
+      },
+      {
+        "word": "type",
+        "count": 268
+      },
+      {
+        "word": "good",
+        "count": 252
+      },
+      {
+        "word": "make",
+        "count": 218
+      },
+      {
+        "word": "also",
+        "count": 209
+      },
+      {
+        "word": "way",
+        "count": 208
+      },
+      {
+        "word": "well",
+        "count": 201
+      },
+      {
+        "word": "feel",
+        "count": 194
+      },
+      {
+        "word": "something",
+        "count": 182
+      },
+      {
+        "word": "always",
+        "count": 181
+      },
+      {
+        "word": "lot",
+        "count": 180
+      },
+      {
+        "word": "find",
+        "count": 177
+      },
+      {
+        "word": "youre",
+        "count": 174
+      },
+      {
+        "word": "could",
+        "count": 170
+      },
+      {
+        "word": "someone",
+        "count": 170
+      },
+      {
+        "word": "life",
+        "count": 163
+      },
+      {
+        "word": "thats",
+        "count": 160
+      },
+      {
+        "word": "sure",
+        "count": 157
+      },
+      {
+        "word": "thing",
+        "count": 149
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENFJ",
+    "word_counts": [
+      {
+        "word": "enfj",
+        "count": 372
+      },
+      {
+        "word": "feel",
+        "count": 343
+      },
+      {
+        "word": "time",
+        "count": 292
+      },
+      {
+        "word": "love",
+        "count": 270
+      },
+      {
+        "word": "something",
+        "count": 251
+      },
+      {
+        "word": "way",
+        "count": 239
+      },
+      {
+        "word": "someone",
+        "count": 221
+      },
+      {
+        "word": "good",
+        "count": 220
+      },
+      {
+        "word": "well",
+        "count": 201
+      },
+      {
+        "word": "friends",
+        "count": 198
+      },
+      {
+        "word": "always",
+        "count": 193
+      },
+      {
+        "word": "also",
+        "count": 181
+      },
+      {
+        "word": "thing",
+        "count": 178
+      },
+      {
+        "word": "make",
+        "count": 174
+      },
+      {
+        "word": "lot",
+        "count": 168
+      },
+      {
+        "word": "could",
+        "count": 166
+      },
+      {
+        "word": "person",
+        "count": 166
+      },
+      {
+        "word": "enfjs",
+        "count": 161
+      },
+      {
+        "word": "need",
+        "count": 160
+      },
+      {
+        "word": "thats",
+        "count": 158
+      }
+    ]
+  },
+  {
+    "mbti_type": "INFP",
+    "word_counts": [
+      {
+        "word": "feel",
+        "count": 2477
+      },
+      {
+        "word": "infp",
+        "count": 2395
+      },
+      {
+        "word": "time",
+        "count": 2150
+      },
+      {
+        "word": "love",
+        "count": 2043
+      },
+      {
+        "word": "good",
+        "count": 1698
+      },
+      {
+        "word": "way",
+        "count": 1608
+      },
+      {
+        "word": "something",
+        "count": 1594
+      },
+      {
+        "word": "also",
+        "count": 1540
+      },
+      {
+        "word": "lot",
+        "count": 1530
+      },
+      {
+        "word": "always",
+        "count": 1517
+      },
+      {
+        "word": "well",
+        "count": 1362
+      },
+      {
+        "word": "never",
+        "count": 1334
+      },
+      {
+        "word": "someone",
+        "count": 1307
+      },
+      {
+        "word": "life",
+        "count": 1304
+      },
+      {
+        "word": "type",
+        "count": 1279
+      },
+      {
+        "word": "make",
+        "count": 1251
+      },
+      {
+        "word": "thing",
+        "count": 1214
+      },
+      {
+        "word": "could",
+        "count": 1185
+      },
+      {
+        "word": "find",
+        "count": 1173
+      },
+      {
+        "word": "cant",
+        "count": 1162
+      }
+    ]
+  },
+  {
+    "mbti_type": "ENFP",
+    "word_counts": [
+      {
+        "word": "enfp",
+        "count": 1057
+      },
+      {
+        "word": "love",
+        "count": 837
+      },
+      {
+        "word": "time",
+        "count": 774
+      },
+      {
+        "word": "feel",
+        "count": 743
+      },
+      {
+        "word": "good",
+        "count": 605
+      },
+      {
+        "word": "way",
+        "count": 569
+      },
+      {
+        "word": "also",
+        "count": 564
+      },
+      {
+        "word": "well",
+        "count": 555
+      },
+      {
+        "word": "lot",
+        "count": 539
+      },
+      {
+        "word": "something",
+        "count": 527
+      },
+      {
+        "word": "youre",
+        "count": 495
+      },
+      {
+        "word": "type",
+        "count": 484
+      },
+      {
+        "word": "make",
+        "count": 464
+      },
+      {
+        "word": "thats",
+        "count": 460
+      },
+      {
+        "word": "always",
+        "count": 455
+      },
+      {
+        "word": "could",
+        "count": 455
+      },
+      {
+        "word": "friends",
+        "count": 448
+      },
+      {
+        "word": "someone",
+        "count": 440
+      },
+      {
+        "word": "life",
+        "count": 434
+      },
+      {
+        "word": "enfps",
+        "count": 429
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISFP",
+    "word_counts": [
+      {
+        "word": "isfp",
+        "count": 463
+      },
+      {
+        "word": "feel",
+        "count": 382
+      },
+      {
+        "word": "time",
+        "count": 372
+      },
+      {
+        "word": "love",
+        "count": 350
+      },
+      {
+        "word": "good",
+        "count": 320
+      },
+      {
+        "word": "type",
+        "count": 290
+      },
+      {
+        "word": "something",
+        "count": 265
+      },
+      {
+        "word": "always",
+        "count": 264
+      },
+      {
+        "word": "way",
+        "count": 263
+      },
+      {
+        "word": "also",
+        "count": 248
+      },
+      {
+        "word": "lot",
+        "count": 236
+      },
+      {
+        "word": "well",
+        "count": 225
+      },
+      {
+        "word": "though",
+        "count": 219
+      },
+      {
+        "word": "never",
+        "count": 217
+      },
+      {
+        "word": "someone",
+        "count": 212
+      },
+      {
+        "word": "life",
+        "count": 211
+      },
+      {
+        "word": "pretty",
+        "count": 199
+      },
+      {
+        "word": "make",
+        "count": 199
+      },
+      {
+        "word": "cant",
+        "count": 195
+      },
+      {
+        "word": "find",
+        "count": 195
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISTP",
+    "word_counts": [
+      {
+        "word": "time",
+        "count": 643
+      },
+      {
+        "word": "istp",
+        "count": 580
+      },
+      {
+        "word": "something",
+        "count": 549
+      },
+      {
+        "word": "good",
+        "count": 455
+      },
+      {
+        "word": "way",
+        "count": 450
+      },
+      {
+        "word": "well",
+        "count": 414
+      },
+      {
+        "word": "type",
+        "count": 414
+      },
+      {
+        "word": "also",
+        "count": 390
+      },
+      {
+        "word": "never",
+        "count": 385
+      },
+      {
+        "word": "someone",
+        "count": 376
+      },
+      {
+        "word": "youre",
+        "count": 366
+      },
+      {
+        "word": "make",
+        "count": 361
+      },
+      {
+        "word": "always",
+        "count": 359
+      },
+      {
+        "word": "pretty",
+        "count": 355
+      },
+      {
+        "word": "feel",
+        "count": 355
+      },
+      {
+        "word": "got",
+        "count": 354
+      },
+      {
+        "word": "lot",
+        "count": 350
+      },
+      {
+        "word": "thats",
+        "count": 346
+      },
+      {
+        "word": "need",
+        "count": 328
+      },
+      {
+        "word": "cant",
+        "count": 323
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISFJ",
+    "word_counts": [
+      {
+        "word": "isfj",
+        "count": 296
+      },
+      {
+        "word": "time",
+        "count": 238
+      },
+      {
+        "word": "feel",
+        "count": 230
+      },
+      {
+        "word": "love",
+        "count": 218
+      },
+      {
+        "word": "also",
+        "count": 181
+      },
+      {
+        "word": "lot",
+        "count": 181
+      },
+      {
+        "word": "way",
+        "count": 164
+      },
+      {
+        "word": "always",
+        "count": 161
+      },
+      {
+        "word": "type",
+        "count": 156
+      },
+      {
+        "word": "sure",
+        "count": 155
+      },
+      {
+        "word": "good",
+        "count": 155
+      },
+      {
+        "word": "well",
+        "count": 146
+      },
+      {
+        "word": "pretty",
+        "count": 143
+      },
+      {
+        "word": "something",
+        "count": 140
+      },
+      {
+        "word": "actually",
+        "count": 131
+      },
+      {
+        "word": "someone",
+        "count": 124
+      },
+      {
+        "word": "make",
+        "count": 123
+      },
+      {
+        "word": "youre",
+        "count": 123
+      },
+      {
+        "word": "isfjs",
+        "count": 119
+      },
+      {
+        "word": "never",
+        "count": 117
+      }
+    ]
+  },
+  {
+    "mbti_type": "ISTJ",
+    "word_counts": [
+      {
+        "word": "istj",
+        "count": 439
+      },
+      {
+        "word": "time",
+        "count": 414
+      },
+      {
+        "word": "something",
+        "count": 315
+      },
+      {
+        "word": "good",
+        "count": 298
+      },
+      {
+        "word": "feel",
+        "count": 286
+      },
+      {
+        "word": "also",
+        "count": 258
+      },
+      {
+        "word": "always",
+        "count": 244
+      },
+      {
+        "word": "work",
+        "count": 243
+      },
+      {
+        "word": "way",
+        "count": 242
+      },
+      {
+        "word": "well",
+        "count": 236
+      },
+      {
+        "word": "type",
+        "count": 234
+      },
+      {
+        "word": "lot",
+        "count": 218
+      },
+      {
+        "word": "make",
+        "count": 217
+      },
+      {
+        "word": "someone",
+        "count": 214
+      },
+      {
+        "word": "could",
+        "count": 211
+      },
+      {
+        "word": "youre",
+        "count": 205
+      },
+      {
+        "word": "never",
+        "count": 205
+      },
+      {
+        "word": "thats",
+        "count": 203
+      },
+      {
+        "word": "friends",
+        "count": 203
+      },
+      {
+        "word": "though",
+        "count": 202
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESTP",
+    "word_counts": [
+      {
+        "word": "estp",
+        "count": 221
+      },
+      {
+        "word": "type",
+        "count": 153
+      },
+      {
+        "word": "good",
+        "count": 133
+      },
+      {
+        "word": "time",
+        "count": 131
+      },
+      {
+        "word": "something",
+        "count": 113
+      },
+      {
+        "word": "way",
+        "count": 111
+      },
+      {
+        "word": "also",
+        "count": 102
+      },
+      {
+        "word": "pretty",
+        "count": 100
+      },
+      {
+        "word": "well",
+        "count": 99
+      },
+      {
+        "word": "got",
+        "count": 99
+      },
+      {
+        "word": "youre",
+        "count": 99
+      },
+      {
+        "word": "always",
+        "count": 98
+      },
+      {
+        "word": "thats",
+        "count": 97
+      },
+      {
+        "word": "friends",
+        "count": 96
+      },
+      {
+        "word": "thing",
+        "count": 95
+      },
+      {
+        "word": "feel",
+        "count": 95
+      },
+      {
+        "word": "sure",
+        "count": 94
+      },
+      {
+        "word": "someone",
+        "count": 94
+      },
+      {
+        "word": "make",
+        "count": 93
+      },
+      {
+        "word": "never",
+        "count": 93
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESFP",
+    "word_counts": [
+      {
+        "word": "esfp",
+        "count": 82
+      },
+      {
+        "word": "feel",
+        "count": 46
+      },
+      {
+        "word": "type",
+        "count": 43
+      },
+      {
+        "word": "good",
+        "count": 38
+      },
+      {
+        "word": "time",
+        "count": 37
+      },
+      {
+        "word": "love",
+        "count": 37
+      },
+      {
+        "word": "youre",
+        "count": 36
+      },
+      {
+        "word": "friends",
+        "count": 34
+      },
+      {
+        "word": "well",
+        "count": 33
+      },
+      {
+        "word": "someone",
+        "count": 32
+      },
+      {
+        "word": "could",
+        "count": 32
+      },
+      {
+        "word": "also",
+        "count": 32
+      },
+      {
+        "word": "something",
+        "count": 30
+      },
+      {
+        "word": "make",
+        "count": 30
+      },
+      {
+        "word": "lot",
+        "count": 29
+      },
+      {
+        "word": "right",
+        "count": 28
+      },
+      {
+        "word": "take",
+        "count": 27
+      },
+      {
+        "word": "life",
+        "count": 27
+      },
+      {
+        "word": "sure",
+        "count": 27
+      },
+      {
+        "word": "always",
+        "count": 27
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESTJ",
+    "word_counts": [
+      {
+        "word": "estj",
+        "count": 54
+      },
+      {
+        "word": "type",
+        "count": 42
+      },
+      {
+        "word": "need",
+        "count": 33
+      },
+      {
+        "word": "never",
+        "count": 32
+      },
+      {
+        "word": "well",
+        "count": 31
+      },
+      {
+        "word": "time",
+        "count": 30
+      },
+      {
+        "word": "love",
+        "count": 29
+      },
+      {
+        "word": "estjs",
+        "count": 27
+      },
+      {
+        "word": "make",
+        "count": 27
+      },
+      {
+        "word": "way",
+        "count": 27
+      },
+      {
+        "word": "ill",
+        "count": 26
+      },
+      {
+        "word": "posh",
+        "count": 26
+      },
+      {
+        "word": "cant",
+        "count": 25
+      },
+      {
+        "word": "life",
+        "count": 25
+      },
+      {
+        "word": "something",
+        "count": 25
+      },
+      {
+        "word": "always",
+        "count": 24
+      },
+      {
+        "word": "said",
+        "count": 23
+      },
+      {
+        "word": "someone",
+        "count": 23
+      },
+      {
+        "word": "might",
+        "count": 21
+      },
+      {
+        "word": "find",
+        "count": 21
+      }
+    ]
+  },
+  {
+    "mbti_type": "ESFJ",
+    "word_counts": [
+      {
+        "word": "esfj",
+        "count": 143
+      },
+      {
+        "word": "esfjs",
+        "count": 102
+      },
+      {
+        "word": "lot",
+        "count": 97
+      },
+      {
+        "word": "time",
+        "count": 94
+      },
+      {
+        "word": "love",
+        "count": 87
+      },
+      {
+        "word": "type",
+        "count": 85
+      },
+      {
+        "word": "feel",
+        "count": 81
+      },
+      {
+        "word": "way",
+        "count": 70
+      },
+      {
+        "word": "also",
+        "count": 67
+      },
+      {
+        "word": "good",
+        "count": 66
+      },
+      {
+        "word": "though",
+        "count": 59
+      },
+      {
+        "word": "find",
+        "count": 56
+      },
+      {
+        "word": "always",
+        "count": 55
+      },
+      {
+        "word": "thing",
+        "count": 54
+      },
+      {
+        "word": "well",
+        "count": 53
+      },
+      {
+        "word": "could",
+        "count": 50
+      },
+      {
+        "word": "something",
+        "count": 50
+      },
+      {
+        "word": "friends",
+        "count": 50
+      },
+      {
+        "word": "make",
+        "count": 48
+      },
+      {
+        "word": "sure",
+        "count": 48
+      }
+    ]
+  }
+]
