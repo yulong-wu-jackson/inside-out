@@ -451,19 +451,25 @@ function createDetailedView(mbtiType) {
     .attr('font-weight', 'bold')
     .style('pointer-events', 'none');
   
-  // Tooltip for person nodes
-  const tooltip = d3.select('#famous-people-graph')
+  // Remove old tooltip if exists
+  d3.select('#famous-people-tooltip').remove();
+  
+  // Create a new tooltip div
+  const tooltip = d3.select('body')
     .append('div')
-    .attr('class', 'chart-tooltip')
-    .style('opacity', 0)
+    .attr('id', 'famous-people-tooltip')
     .style('position', 'absolute')
-    .style('background-color', 'rgba(255, 255, 255, 0.95)')
-    .style('border', '1px solid #ddd')
-    .style('border-radius', '5px')
+    .style('visibility', 'hidden')
+    .style('background', 'rgba(255, 255, 255, 0.95)')
+    .style('color', '#333')
     .style('padding', '10px')
-    .style('box-shadow', '0 2px 5px rgba(0, 0, 0, 0.1)')
-    .style('z-index', '1000') // Higher z-index to ensure it's on top
-    .style('pointer-events', 'none') // Prevent tooltip from intercepting mouse events
+    .style('border-radius', '5px')
+    .style('border', '1px solid #ddd')
+    .style('box-shadow', '0 2px 5px rgba(0, 0, 0, 0.2)')
+    .style('font-family', 'Poppins, sans-serif')
+    .style('font-size', '14px')
+    .style('z-index', '9999')
+    .style('pointer-events', 'none')
     .style('max-width', '250px');
   
   // Add hover events for person nodes
@@ -477,26 +483,27 @@ function createDetailedView(mbtiType) {
         .attr('stroke', '#333')
         .attr('stroke-width', 3);
       
-      // Show tooltip
-      tooltip.transition()
-        .duration(200)
-        .style('opacity', 1);
-      
-      // Format tooltip content
+      // Build tooltip content
       const content = `
-        <div class="tooltip-header"><strong>${d.id}</strong></div>
-        <div class="tooltip-body">
-          <div><strong>MBTI Type:</strong> ${d.mbtiType}</div>
-          <div><strong>Votes:</strong> ${d.votes.toLocaleString()}</div>
-          <div><strong>Cognitive Functions:</strong> ${d.data["first function"]}, ${d.data["second function"]}, ${d.data["third function"]}, ${d.data["fourth function"]}</div>
-        </div>
+        <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${d.id}</div>
+        <div style="font-weight: bold; color: ${mbtiColors[d.mbtiType]}; margin-bottom: 8px;">${d.mbtiType}</div>
+        <div style="margin-bottom: 5px;"><b>Total Votes:</b> ${d.votes.toLocaleString()}</div>
       `;
       
-      tooltip.html(content)
-        .style('left', (event.pageX + 10) + 'px')
-        .style('top', (event.pageY - 20) + 'px');
+      // Show and position tooltip
+      tooltip
+        .html(content)
+        .style('visibility', 'visible')
+        .style('left', (event.pageX + 15) + 'px')
+        .style('top', (event.pageY - 30) + 'px');
       
-      console.log("Tooltip shown for:", d.id, "at position:", event.pageX, event.pageY);
+      console.log('Mouseover triggered for:', d.id);
+    })
+    .on('mousemove', function(event) {
+      // Update tooltip position as mouse moves
+      tooltip
+        .style('left', (event.pageX + 15) + 'px')
+        .style('top', (event.pageY - 30) + 'px');
     })
     .on('mouseout', function(event, d) {
       // Revert highlighting
@@ -508,11 +515,11 @@ function createDetailedView(mbtiType) {
         .attr('stroke-width', 2);
       
       // Hide tooltip
-      tooltip.transition()
-        .duration(500)
-        .style('opacity', 0);
+      tooltip.style('visibility', 'hidden');
+      
+      console.log('Mouseout triggered for:', d.id);
     })
-    .style('cursor', 'pointer'); // Add pointer cursor to indicate interactivity
+    .style('cursor', 'pointer');
   
   // Add back button
   const backButton = document.createElement('button');
