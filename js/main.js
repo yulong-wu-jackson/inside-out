@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // to make them available globally
   exposeVisualizationFunctions();
   
-  // Initialize MBTI visualizations with a short delay to ensure DOM is ready
-  setTimeout(() => {
-    console.log('Initializing all visualizations from main.js...');
-    initAllVisualizations();
-    initWhoCommentsMostChart();
-    initWordCloudVisualization();
-  }, 500);
+  // Initialize MBTI visualizations
+  console.log('Initializing all visualizations from main.js...');
+  initAllVisualizations();
+  initWhoCommentsMostChart();
+  initWordCloudVisualization();
   
   // Add window resize handler for responsive visualizations
   window.addEventListener('resize', debounce(function() {
@@ -40,11 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
       chartContainer.innerHTML = '<div class="loading">Resizing visualization...</div>';
     }
     
-    // Reinitialize visualizations after a short delay
-    setTimeout(() => {
-      initAllVisualizations();
-    }, 100);
-    
+    // Reinitialize visualizations
+    initAllVisualizations();
   }, 250));
 });
 

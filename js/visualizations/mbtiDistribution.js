@@ -292,7 +292,13 @@ function createTypeDistributionChart(data) {
     .duration(500)
     .delay((d, i) => i * 50)
     .attr('y', d => y(d.percentage))
-    .attr('height', d => Math.max(1, height - y(d.percentage))); // Ensure minimum height of 1px
+    .attr('height', d => Math.max(1, height - y(d.percentage)))
+    .on('end', function() {
+      // Only highlight after all bars have finished animating
+      if (this === bars.nodes()[bars.nodes().length - 1]) {
+        highlightUserTypeInChart();
+      }
+    });
   
   // Add labels on top of bars
   barsGroup.selectAll('.label')
@@ -397,8 +403,7 @@ function createTypeDistributionChart(data) {
 function highlightUserTypeInChart() {
   const svg = d3.select('#type-distribution-chart svg');
   if (!svg.node()) {
-    console.log('SVG container not found for highlighting, retrying in 1000ms...');
-    setTimeout(highlightUserTypeInChart, 1000);
+    console.log('SVG container not found for highlighting');
     return;
   }
   
@@ -416,25 +421,11 @@ function highlightUserTypeInChart() {
   
   // Find the bar for the user's type
   let foundMatch = false;
-  let debugBars = [];
-  
-  // Log all bar data to debug
-  console.log('--- DEBUG: All bars data ---');
-  svg.selectAll('.bar').each(function() {
-    const bar = d3.select(this);
-    const barData = bar.datum();
-    debugBars.push({
-      type: barData ? barData.type : 'undefined',
-      data: barData
-    });
-  });
-  console.log('Available bars:', debugBars);
   
   // Get the SVG's g element (the main chart group)
   const g = svg.select('g');
   if (!g.node()) {
-    console.log('SVG g element not found, retrying in 1000ms...');
-    setTimeout(highlightUserTypeInChart, 1000);
+    console.log('SVG g element not found');
     return;
   }
   
@@ -442,8 +433,6 @@ function highlightUserTypeInChart() {
   g.selectAll('.bar').each(function() {
     const bar = d3.select(this);
     const barData = bar.datum();
-    
-    console.log('Checking bar:', barData ? barData.type : 'undefined', 'against userType:', userType);
     
     if (barData && barData.type === userType) {
       foundMatch = true;
@@ -472,7 +461,7 @@ function highlightUserTypeInChart() {
       g.append('text')
         .attr('class', 'user-type-label')
         .attr('x', offsetX + barRect.width/2)
-        .attr('y', offsetY - 10)
+        .attr('y', offsetY - 30)
         .attr('text-anchor', 'middle')
         .attr('font-size', '12px')
         .attr('font-weight', 'bold')
@@ -482,8 +471,7 @@ function highlightUserTypeInChart() {
   });
   
   if (!foundMatch) {
-    console.log('No matching bar found for user type:', userType, 'retrying in 1000ms...');
-    setTimeout(highlightUserTypeInChart, 1000);
+    console.log('No matching bar found for user type:', userType);
   }
 }
 
@@ -517,13 +505,6 @@ function refreshVisualization() {
       const mbtiData = await loadMBTIData();
       if (mbtiData) {
         createTypeDistributionChart(mbtiData);
-        
-        // Add a small delay before highlighting to ensure the chart is fully rendered
-        // This is essential for the highlight to find the correct bars
-        setTimeout(() => {
-          console.log("Chart created, now highlighting user type...");
-          highlightUserTypeInChart();
-        }, 500); // Increased delay to ensure chart is fully rendered
       }
     }, 800);
   }
@@ -572,12 +553,6 @@ async function initMBTIDistributionViz() {
   if (mbtiData) {
     console.log("MBTI data loaded successfully");
     createTypeDistributionChart(mbtiData);
-    
-    // Add a delay before highlighting to ensure chart is fully rendered
-    setTimeout(() => {
-      console.log('Chart created, now highlighting user MBTI type...');
-      highlightUserTypeInChart();
-    }, 1300);
   } else {
     console.error("Failed to load MBTI data for visualization");
   }
