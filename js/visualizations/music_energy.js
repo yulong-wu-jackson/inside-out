@@ -304,7 +304,7 @@
 
     // Right column: create an image element for the MBTI type (unchanged)
     const imgEl = document.createElement('img');
-    imgEl.src = `assets/svgs/MBTI/${type}.png`;
+    imgEl.src = "assets/svgs/MBTI/" + type + ".png";
     imgEl.alt = `Image for ${type}`;
     imgEl.style.width = '80%';
     imgEl.style.height = '250px';
