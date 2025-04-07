@@ -230,7 +230,7 @@ function createWordCloud(data, mbtiType, canvas, globalMaxWordCount) {
         // Include both original count and scaled size in the tooltip
         tooltip.innerHTML = `
           <strong>${item[0]}</strong>: ${parseInt(count).toLocaleString()} occurrences
-          <br><span style="font-size: 12px; opacity: 0.8;">Font size: ${scaledSize.toFixed(1)}px (scale factor: ${scaleFactor.toFixed(3)})</span>
+         
         `;
         
         tooltip.style.opacity = '0.9';

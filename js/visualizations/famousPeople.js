@@ -350,6 +350,10 @@ function createDetailedView(mbtiType) {
   // Limit to top 20 famous people for this type to avoid clutter
   const topFamousPeople = famousPeople.slice(0, 20);
   
+  // Find the maximum vote count for normalization
+  const maxVotes = d3.max(topFamousPeople, person => person["total votes"]) || 1;
+  console.log(`Max votes among famous ${mbtiType} people: ${maxVotes}`);
+  
   // Set dimensions
   width = container.clientWidth;
   height = container.clientHeight || 600;
@@ -373,15 +377,28 @@ function createDetailedView(mbtiType) {
     color: mbtiColors[mbtiType]
   };
   
-  personNodes = topFamousPeople.map(person => ({
-    id: person.name,
-    type: 'person',
-    mbtiType: mbtiType,
-    radius: 30 + (person["total votes"] / 1000), // Scale radius by popularity, with minimum size
-    votes: person["total votes"],
-    color: d3.color(mbtiColors[mbtiType]).brighter(0.7),
-    data: person
-  }));
+  // Calculate radius based on normalized vote count
+  // Base radius = 25, max additional radius = 35
+  const MIN_RADIUS = 25;
+  const MAX_ADDITIONAL_RADIUS = 35;
+  
+  personNodes = topFamousPeople.map(person => {
+    // Normalize votes to get a scale factor between 0 and 1
+    const voteScaleFactor = (person["total votes"] || 0) / maxVotes;
+    
+    // Calculate radius: min radius + additional radius based on votes
+    const radius = MIN_RADIUS + (voteScaleFactor * MAX_ADDITIONAL_RADIUS);
+    
+    return {
+      id: person.name,
+      type: 'person',
+      mbtiType: mbtiType,
+      radius: radius,
+      votes: person["total votes"] || 0,
+      color: d3.color(mbtiColors[mbtiType]).brighter(0.7),
+      data: person
+    };
+  });
   
   // Create links
   links = personNodes.map(person => ({

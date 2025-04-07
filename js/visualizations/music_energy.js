@@ -312,4 +312,28 @@
     imgEl.style.borderRadius = '8px';
     rightColumn.appendChild(imgEl);
   }
+
+  // Export a function to update the music energy visualization from outside
+  window.updateMusicEnergyType = function(mbtiType) {
+    console.log("Updating music energy visualization to:", mbtiType);
+    
+    // Find the tab with the matching MBTI type
+    const allTabs = document.querySelectorAll('#music-energy-tabs .mbti-tab');
+    
+    // Find the matching tab by text content
+    let matchingTab = null;
+    allTabs.forEach(tab => {
+      if (tab.textContent === mbtiType) {
+        matchingTab = tab;
+      }
+    });
+    
+    // If found, trigger a click on it
+    if (matchingTab) {
+      console.log("Found matching tab for type:", mbtiType);
+      matchingTab.click();
+    } else {
+      console.log("No matching tab found for type:", mbtiType);
+    }
+  };
 })();

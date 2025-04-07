@@ -110,6 +110,11 @@ function initMBTISelection() {
     if (window.updateWordCloudType) {
       window.updateWordCloudType(mbtiType);
     }
+    
+    // If window.updateMusicEnergyType exists, call it with the new MBTI type
+    if (window.updateMusicEnergyType) {
+      window.updateMusicEnergyType(mbtiType);
+    }
   });
   
   // Skip button click

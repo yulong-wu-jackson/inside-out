@@ -1800,4 +1800,90 @@ p {
   .person-node text {
     font-size: 10px;
   }
+}
+
+/* ------------------------------------------------------------
+   THANK YOU SECTION
+------------------------------------------------------------ */
+.thanks-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.thanks-section {
+  flex: 1;
+  min-width: 250px;
+  background: #f9fafb;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.thanks-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.thanks-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: var(--spacing-sm);
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-list li {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.team-list li:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(5px);
+}
+
+.thanks-message {
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(var(--primary-color-rgb), 0.05);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius-md);
+}
+
+.thanks-message p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Add RGB version of primary color for transparency */
+:root {
+  --primary-color-rgb: 99, 102, 241;
+}
+
+@media (max-width: 768px) {
+  .thanks-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .thanks-section {
+    width: 100%;
+  }
 } 
